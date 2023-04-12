@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>불자료형</title>
+    <script>
+        const b1 = !true 
+        const b2 = !!false 
+        const b3 = 57>333 
+        const b4 = (123 == '123')
+        const b5 = '사랑'>'하마'
+        console.log('!ture : '+b1) // !true : false
+        console.log('!!false : '+b2) // !false : true
+        console.log('57>333 : '+b3) // 57>333 : false
+        console.log("123=='123': "+b4) // 123 == '123' : true
+        console.log("'사랑>하마': "+b5) // '사랑'>'하마' : false
+    </script>
+</head>
+<body>
+    <h1>불자료형</h1>
+    <h2>
+        <pre>
+        const b1 = !true 
+        const b2 = !!false 
+        const b3 = 57>333 
+        const b4 = (123 == '123')
+        const b5 = '사랑'>'하마'
+        console.log('!ture : '+b1) // !true : false
+        console.log('!false : '+b2) // !!false : false
+        console.log('57>333 : '+b3) // 57>333 : false
+        console.log("123=='123': "+b4) // 123 == '123' : true
+        console.log("'사랑>하마': "+b5) // '사랑'>'하마' : false
+        </pre>
+    </h2>
+</body>
+</html>
