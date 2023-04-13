@@ -1,5 +1,4 @@
 .a{
-    margin: 80px;
     border: 2px solid black;
     border-collapse: collapse;
     text-align: center;
@@ -7,7 +6,11 @@
 tr,th,td {
     border: 1px solid black;
     border-collapse: collapse;
+    padding: 0 30px;
 }
 th {
     background-color:aquamarine;
+}
+mark {
+    border: 1px solid black;
 }
