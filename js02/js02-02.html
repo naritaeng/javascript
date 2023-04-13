@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>환전</title>
+    <script>
+        const dollar = prompt('환전하실 달러를 입력해주세요.')
+        const a = 1350
+        const b = 133
+        const c = 7
+        const won = Number(dollar) * a
+        const yen = Number(dollar) * b
+        const yuan = Number(dollar) * c
+        console.log(`환전하실 ${dollar}달러는 ${won}원입니다.`)
+        console.log(`환전하실 ${dollar}달러는 ${yen}엔입니다.`)
+        console.log(`환전하실 ${dollar}달러는 ${yuan}위안입니다.`)
+        document.write(`<h1>입력하신 ${dollar}달러를 환전하면<h1>`)
+        document.write(`<h1>한국 ${won}원<h1>`)
+        document.write(`<h1>일본 ${yen}엔<h1>`)
+        document.write(`<h1>중국 ${yuan}위안<h1>`)
+
+    
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
