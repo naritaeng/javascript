@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>예제2(p149)</title>
+    <script>
+        const input = prompt('정수를 입력해주세요.','')
+        const num = Number(input)
+
+        if(num % 2 === 0) {
+            alert(`${input}은 짝수입니다.`)
+            console.log(`${input}은 짝수입니다.`)
+            document.write(`<h1>${input}은 짝수입니다.</h1>`)
+        }else{
+            alert(`${input}은 홀수입니다.`)
+            console.log(`${input}은 홀수입니다.`)
+            document.write(`<h1>${input}은 홀수입니다.</h1>`)
+        }
+    </script>
+    <style>
+        h1{
+            width: 300px;
+            background-color: beige;
+            color: red;
+            transition: transform 0.5s ease;
+            border: 1px solid green;
+            border-radius: 20px;
+            text-align: center;
+            animation: h 0.5s alternate infinite;
+        }
+        h1:hover {
+            background-color: yellowgreen;
+            transform: scale(1.1);
+        }
+        @keyframes h {
+            0% {
+                transform: scale()
+            }
+            100% {
+                transform: scale(1.1)
+            }
+        }
+    </style>
+</head>
+<body>
+    
+</body>
+</html>
