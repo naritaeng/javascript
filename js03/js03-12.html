@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        let won = Number(prompt('돈을 입력하세요.',''));
+        console.log(`입력하신 ${won}원을 거스름으로 분리하면`)
+        document.write(`<h1>입력하신 <mark>${won}원</mark>을 거스름으로 분리하면</h1>`)
+        let fifty = 0;
+        let ten = 0;
+        let five = 0;
+        let one = 0;
+        let mfive = 0;
+        let mone = 0;
+        let sfive = 0;
+        let sone = 0;
+        if(won>=50000) {
+            console.log(`5만원 Math.floor${won/50000}`);
+            fifty = Math.floor(won/50000);
+            won = won % 50000 ;
+        }
+        if(won>=10000) {
+            console.log(`1만원 ${won/10000}`);
+            ten = Math.floor(won/10000);
+            won = won % 10000;
+        }
+        if(won>=5000) {
+            console.log(`${won/five}`);
+            five = Math.floor(won/5000);
+            won = won % 5000;
+        }
+        if(won>=1000) {
+            console.log(`${won/five}`);
+            one = Math.floor(won/1000);
+            won = won % 1000;
+        }
+        if(won>=500) {
+            console.log(`${won/five}`);
+            mfive = Math.floor(won/500);
+            won = won % 500;
+        }
+        if(won>=100) {
+            console.log(`${won/five}`);
+            mone = Math.floor(won/100);
+            won = won % 100;
+        }
+        if(won>=50) {
+            console.log(`${won/five}`);
+            sfive = Math.floor(won/50);
+            won = won % 50;
+        }
+        if(won>=10) {
+            console.log(`${won/five}`);
+            sone = Math.floor(won/10);
+        }
+        
+        let list = ''
+        list += `<table>`
+            list += `<tr>
+                        <th>잔돈</th>
+                        <th>개수</th>
+                    </tr>`
+            list += `<tr>
+                        <td class="mo">5만원권</td>
+                        <td clase="ea">${fifty}</td>
+                    </tr>`      
+            list += `<tr>
+                        <td class="mo">1만원권</td>
+                        <td clase="ea">${ten}</td>
+                    </tr>`      
+            list += `<tr>
+                        <td class="mo">5천원권</td>
+                        <td clase="ea">${five}</td>
+                    </tr>`      
+            list += `<tr>
+                        <td class="mo">1천원권</td>
+                        <td clase="ea">${one}</td>
+                    </tr>`      
+            list += `<tr>
+                        <td class="mo">5백원</td>
+                        <td clase="ea">${mfive}</td>
+                    </tr>`      
+            list += `<tr>
+                        <td class="mo">1백원</td>
+                        <td clase="ea">${mone}</td>
+                    </tr>`      
+            list += `<tr>
+                        <td class="mo">5십원</td>
+                        <td clase="ea">${sfive}</td>
+                    </tr>`      
+            list += `<tr>
+                        <td class="mo">10원</td>
+                        <td clase="ea">${sone}</td>
+                    </tr>`      
+        list += `</table>`
+        
+        document.write(list)
+    </script>
+    <style>
+        table {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+        tr,th,td {
+            border: 1px solid black;
+            border-collapse: collapse;
+            width: 200px;
+            height: 50px;
+            font-size: 1.2rem;
+            text-align: center;
+        }
+        .mo {
+            background-color: lightblue;
+        }
+        .ea {
+            background-color: yellow;
+        }
+        
+    </style>
+</head>
+<body>
+    
+</body>
+</html>
