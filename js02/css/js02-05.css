@@ -1,0 +1,21 @@
+table {
+    border: 1px solid black;
+    border-collapse: collapse;
+    margin: 100px;
+    text-align: center;
+}
+tr,td,th {
+    border: 1px solid black;
+    border-collapse: collapse;
+    width: 500px;
+    height: 70px;
+    transition: transform 0.5s;
+}
+th {
+    background-color: beige;
+}
+td:hover {
+    transform: scale(1.1);
+    background: lightblue;
+    color: yellow;
+}

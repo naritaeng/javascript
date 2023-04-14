@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>입력받기</title>
+    <script>
+        const year = prompt('태어나신 년도를 입력하세요.') * 1
+        if(year>2004) {
+            alert(`당신은 미성년자입니다. 집으로 돌아가세요.`)
+        }
+        if(year<2004) {
+            alert(`당신은 성인입니다. 건강한 생활을 하세요.`)
+        }
+        if(year==2004) {
+            alert(`이제 성인에 접어들었군요. 축하합니다!`)
+        }
+        console.log(`당신은 ${year}년생이군요!`)
+        alert(`당신은 ${year}년생이군요!`)
+        document.write(`<h1>당신은 ${year}년생이군요.</h1>`)
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
