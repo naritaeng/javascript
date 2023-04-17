@@ -103,23 +103,38 @@
         table {
             border: 1px solid black;
             border-collapse: collapse;
+            margin-left: 50px;
+            transition: 0.5s linear;
         }
         tr,th,td {
             border: 1px solid black;
             border-collapse: collapse;
-            width: 200px;
+            width: 150px;
             height: 50px;
             font-size: 1.2rem;
             text-align: center;
         }
         .mo {
             background-color: lightblue;
+            transition: 0.1s linear;
         }
         .ea {
             background-color: yellow;
+            transition: 0.1s linear;
         }
         th {
             background-color: lightgreen;
+        }
+        table:hover {
+            transform: scale(1.05);
+            box-shadow: 3px 3px gray;
+            width: 500px;
+        }
+        .mo:hover {
+            background-color: lightpink;
+        }
+        .ea:hover {
+            background-color: lightpink;
         }
         
     </style>
