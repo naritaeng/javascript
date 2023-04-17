@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>for문예제</title>
+    <script>
+        for(let i=1;i<101;i++){
+            if(i%15==0){
+                console.log(`%c오예`,'background-color:blue; color:white;border: 1px solid black;')
+                document.write(`<h3 class="ohye">오예<h3>`)
+            } else if(i%5==0){
+                console.log(`%c오`,'background-color:green; color:white;border:1px solid black;')
+                document.write(`<h3 class="jjak">짝</h3>`)
+            } else if(i%3==0){
+                console.log(`%c짝`,'background-color:red; color:white;border: 1px solid black;')
+                document.write(`<h3 class="oh">오</h3>`)
+            } else {
+                console.log(i)
+                document.write(`<h3>${i}</h3>`)
+            }
+        }
+    </script>
+    <style>
+        body {
+            margin-left: 30px;
+        }
+        .ohye {
+            height: 25px;
+            width: 50px;
+            text-align: center;
+            background-color: blue;
+            color: white;
+            animation: ohye 0.4s alternate infinite ease-in-out;
+            transition: 0.3s linear;
+        }
+        .ohye:hover{
+            background-color:coral;
+            color:blue;
+            width: 80px;
+        }
+        @keyframes ohye {
+            0% {
+                transform: scale();
+            }
+            100% {
+                border-radius: 30px;
+                transform: scale(1.3);
+            }
+        }
+    </style>
+</head>
+<body>
+    
+</body>
+</html>
