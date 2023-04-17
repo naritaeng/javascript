@@ -1,4 +1,4 @@
-const k = prompt('국어점수를 입력하세요.') * 1
+        const k = prompt('국어점수를 입력하세요.') * 1
         const m = prompt('수학점수를 입력하세요.') * 1
         const s = prompt('과학점수를 입력하세요.') * 1
         console.log(`입력하신 국어점수는 ${k}점 입니다.`)

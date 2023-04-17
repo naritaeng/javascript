@@ -18,42 +18,42 @@
         let sfive = 0;
         let sone = 0;
         if(won>=50000) {
-            console.log(`5만원 Math.floor${won/50000}`);
+            console.log(`5만원 ${Math.floor(won/50000)}장`);
             fifty = Math.floor(won/50000);
             won = won % 50000 ;
         }
         if(won>=10000) {
-            console.log(`1만원 ${won/10000}`);
+            console.log(`1만원 ${Math.floor(won/10000)}장`);
             ten = Math.floor(won/10000);
             won = won % 10000;
         }
         if(won>=5000) {
-            console.log(`${won/five}`);
+            console.log(`5천원 ${Math.floor(won/5000)}장`);
             five = Math.floor(won/5000);
             won = won % 5000;
         }
         if(won>=1000) {
-            console.log(`${won/five}`);
+            console.log(`1천원 ${Math.floor(won/1000)}장`);
             one = Math.floor(won/1000);
             won = won % 1000;
         }
         if(won>=500) {
-            console.log(`${won/five}`);
+            console.log(`5백원 ${Math.floor(won/500)}장`);
             mfive = Math.floor(won/500);
             won = won % 500;
         }
         if(won>=100) {
-            console.log(`${won/five}`);
+            console.log(`1백원 ${Math.floor(won/100)}장`);
             mone = Math.floor(won/100);
             won = won % 100;
         }
         if(won>=50) {
-            console.log(`${won/five}`);
+            console.log(`50원 ${Math.floor(won/50)}장`);
             sfive = Math.floor(won/50);
             won = won % 50;
         }
         if(won>=10) {
-            console.log(`${won/five}`);
+            console.log(`10원 ${Math.floor(won/10)}장`);
             sone = Math.floor(won/10);
         }
         
@@ -65,35 +65,35 @@
                     </tr>`
             list += `<tr>
                         <td class="mo">5만원권</td>
-                        <td clase="ea">${fifty}</td>
+                        <td class="ea">${fifty}장</td>
                     </tr>`      
             list += `<tr>
                         <td class="mo">1만원권</td>
-                        <td clase="ea">${ten}</td>
+                        <td class="ea">${ten}장</td>
                     </tr>`      
             list += `<tr>
                         <td class="mo">5천원권</td>
-                        <td clase="ea">${five}</td>
+                        <td class="ea">${five}장</td>
                     </tr>`      
             list += `<tr>
                         <td class="mo">1천원권</td>
-                        <td clase="ea">${one}</td>
+                        <td class="ea">${one}장</td>
                     </tr>`      
             list += `<tr>
                         <td class="mo">5백원</td>
-                        <td clase="ea">${mfive}</td>
+                        <td class="ea">${mfive}장</td>
                     </tr>`      
             list += `<tr>
                         <td class="mo">1백원</td>
-                        <td clase="ea">${mone}</td>
+                        <td class="ea">${mone}장</td>
                     </tr>`      
             list += `<tr>
-                        <td class="mo">5십원</td>
-                        <td clase="ea">${sfive}</td>
+                        <td class="mo">50원</td>
+                        <td class="ea">${sfive}장</td>
                     </tr>`      
             list += `<tr>
                         <td class="mo">10원</td>
-                        <td clase="ea">${sone}</td>
+                        <td class="ea">${sone}장</td>
                     </tr>`      
         list += `</table>`
         
@@ -117,6 +117,9 @@
         }
         .ea {
             background-color: yellow;
+        }
+        th {
+            background-color: lightgreen;
         }
         
     </style>
