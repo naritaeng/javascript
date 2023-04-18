@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>피라미드2</title>
+    <script>
+        let out = ''
+        for(let i=1;i<16;i++){
+            for(let j=16;j>i;j--){
+                out+=' '
+            }
+            for(let k=0;k<2*i-1;k++){
+                out+='*'
+            }
+            out+='\n';
+        }
+        console.log(`%c${out}`,'color: red; font-size:1.2rem;')
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
