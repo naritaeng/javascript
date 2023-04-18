@@ -6,27 +6,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>피라미드3</title>
     <script>
-        let out=''
-        for(let i=1;i<16;i++){
-            for(let j=16;j>i;j--){
-                out+=' '
+        let out = ''
+            for(let i=1;i<=5;i++){
+                for(let j=5;j>i;j--){
+                out += ' '
+                }
+                for(let k=0;k<2*i-1;k++){
+                    out += '*'
+                }
+                out+='\n'
             }
-            for(let k=0;k<2*i-1;k++){
-                out+='*'
+            for(let i=5;i>=1;i--){
+                for(let j=5;j>i;j--){
+                    out+=' '
+                }
+                for(let k=0;k<2*i-1;k++){
+                    out+='*'
+                }
+                out+='\n'
             }
-            out+='\n';
-        }
-        for(let i=0;i<16;i++){
-            for(let j=0;j<i;j++){
-            out +=' '
-            }
-            for(let k=0;k<(2*(15-i)+1);k++){
-                out +='*'
-            }
-            out +='\n'
-        }
-        console.log(out)
-
+            console.log(out)
     </script>
 </head>
 <body>
