@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>주사위</title>
+    <script>
+        let one=two=three=four=five=six=0
+        for(let i=1;i<=100000;i++){
+            const ran = Math.floor(Math.random()*6)+1
+            if(ran==1){
+                one+=1
+            }
+            if(ran==2){
+                two+=1
+            }
+            if(ran==3){
+                three+=1
+            }
+            if(ran==4){
+                four+=1
+            }
+            if(ran==5){
+                five+=1
+            }
+            if(ran==6){
+                six+=1
+            }
+        }
+        console.log(`1이 나온 횟수 : ${one}번 확률 : ${(one/100000)*100}%`)
+        console.log(`2가 나온 횟수 : ${two}번 ${(two/100000)*100}%`)
+        console.log(`3이 나온 횟수 : ${three}번 ${(three/100000)*100}%`)
+        console.log(`4가 나온 횟수 : ${four}번 ${(four/100000)*100}%`)
+        console.log(`5가 나온 횟수 : ${five}번 ${(five/100000)*100}%`)
+        console.log(`6이 나온 횟수 : ${six}번 ${(six/100000)*100}%`)
+        console.log(`돌린 횟수 : ${one+two+three+four+five+six}`)
+        document.write(`1이 나온 횟수 : ${one}번 <br>`)
+        document.write(`2가 나온 횟수 : ${two}번 <br>`)
+        document.write(`3이 나온 횟수 : ${three}번 <br>`)
+        document.write(`4가 나온 횟수 : ${four}번 <br>`)
+        document.write(`5가 나온 횟수 : ${five}번 <br>`)
+        document.write(`6이 나온 횟수 : ${six}번 <br>`)
+        </script>
+</head>
+<body>
+    
+</body>
+</html>

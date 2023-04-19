@@ -4,16 +4,15 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>피라미드1</title>
+    <title>for in 반복문</title>
     <script>
-        let out = ''
-        for(let i=10;i>1;i--){
-            for(let j=1;j<i;j++){
-                out+='*';
-            }
-            out+='\n';
+        const arr = [11,22,33,44,55,66,77,88,99]
+        for(const i in arr){
+            console.log(i)
         }
-        console.log(`%c${out}`,'background-color:black; color: red; font-size:1.2rem;')
+        // for(let i=0;i<arr.length;i++){
+        //     console.log(i)
+        // }
     </script>
 </head>
 <body>

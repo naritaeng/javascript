@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>숫자 맞추기</title>
+    <script>
+        const ran = Math.floor(Math.random()*100)
+        for(let i=1;i<6;i++){
+            input = prompt(`1부터 100까지 숫자를 입력하세요.[${i}번째시도] 정답:${ran}]`)*1
+            if(input<ran){
+            alert(`입력한 숫자가 정답보다 작습니다.[${i}번째 시도] 정답:${ran}`)
+            }
+            if(input>ran){
+            alert(`입력한 숫자가 정답보다 큽니다.[${i}번째 시도] 정답:${ran}`) 
+            }
+            if(input==ran) {
+            alert(`정답입니다.[${i}번째 시도]`)
+            document.write(`<h1>정답입니다!<br>축하드립니다~<br>정답:${ran}</h1>`)
+            console.log(`입력값:[${input},정답:[${ran}]`)
+            break;
+            }
+            if(i===5){
+                alert(`주어진 기회를 모두 소진하였습니다. 정답:${ran}`)
+            } 
+        }
+        
+        
+        
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
