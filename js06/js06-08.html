@@ -4,10 +4,16 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>주사위</title>
+    <title>주사위원본</title>
     <script>
-        let one=two=three=four=five=six=0
-        for(let i=1;i<=100000;i++){
+        let one = prompt(`one에 고정값 얼마를 주시겠습니까?`,0)*1
+        let two =  prompt(`two에 고정값 얼마를 주시겠습니까?`,0)*1
+        let three = prompt(`three에 고정값 얼마를 주시겠습니까?`,0)*1
+        let four = prompt(`four에 고정값 얼마를 주시겠습니까?`,0)*1
+        let five = prompt(`five에 고정값 얼마를 주시겠습니까?`,0)*1
+        let six = prompt(`six에 고정값 얼마를 주시겠습니까?`,0)*1
+        let fix = one+two+three+four+five+six
+        for(let i=1;i<=1000000-fix;i++){
             const ran = Math.floor(Math.random()*6)+1
             if(ran==1){
                 one+=1
@@ -28,20 +34,87 @@
                 six+=1
             }
         }
-        console.log(`1이 나온 횟수 : ${one}번 확률 : ${(one/100000)*100}%`)
-        console.log(`2가 나온 횟수 : ${two}번 ${(two/100000)*100}%`)
-        console.log(`3이 나온 횟수 : ${three}번 ${(three/100000)*100}%`)
-        console.log(`4가 나온 횟수 : ${four}번 ${(four/100000)*100}%`)
-        console.log(`5가 나온 횟수 : ${five}번 ${(five/100000)*100}%`)
-        console.log(`6이 나온 횟수 : ${six}번 ${(six/100000)*100}%`)
+        console.log(`1이 나온 횟수 : ${one}번 확률 : ${(one/1000000)*100}%`)
+        console.log(`2가 나온 횟수 : ${two}번 확률 : ${(two/1000000)*100}%`)
+        console.log(`3이 나온 횟수 : ${three}번 확률 : ${(three/1000000)*100}%`)
+        console.log(`4가 나온 횟수 : ${four}번 확률 : ${(four/1000000)*100}%`)
+        console.log(`5가 나온 횟수 : ${five}번 확률 : ${(five/1000000)*100}%`)
+        console.log(`6이 나온 횟수 : ${six}번 확률 : ${(six/1000000)*100}%`)
         console.log(`돌린 횟수 : ${one+two+three+four+five+six}`)
-        document.write(`1이 나온 횟수 : ${one}번 <br>`)
-        document.write(`2가 나온 횟수 : ${two}번 <br>`)
-        document.write(`3이 나온 횟수 : ${three}번 <br>`)
-        document.write(`4가 나온 횟수 : ${four}번 <br>`)
-        document.write(`5가 나온 횟수 : ${five}번 <br>`)
-        document.write(`6이 나온 횟수 : ${six}번 <br>`)
+        
+        
+        let list = ''
+        list += `<table>`
+        list +=    `<tr>
+                        <th>숫자</th>
+                        <th>횟수</th>
+                        <th>확률</th>
+                    </tr>   
+                    <tr>
+                        <td>1</td>
+                        <td>${one}번</td>
+                        <td>${(one/1000000)*100}%</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>${two}번</td>
+                        <td>${(two/1000000)*100}%</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>${three}번</td>
+                        <td>${(three/1000000)*100}%</td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>${four}번</td>
+                        <td>${(four/1000000)*100}%</td>
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td>${five}번</td>
+                        <td>${(five/1000000)*100}%</td>
+                    </tr>
+                    <tr>
+                        <td>6</td>
+                        <td>${six}번</td>
+                        <td>${(six/1000000)*100}%</td>
+                    </tr>
+                    <tr>
+                        <th>합계</th>
+                        <td>${one+two+three+four+five+six}번</td>
+                        <td></td>
+                    </tr>`
+        list += `</table>`
+        document.write(list)
         </script>
+        <style>
+            body {
+                margin: 50px 50px;
+            }
+            table {
+                border:2px solid black;
+                border-collapse: collapse;
+                width: 400px;
+                height: 250px;
+                font-size: 1.2rem;
+                text-align: center;
+            }
+            th {
+                border: 2px solid black;
+                background-color: yellow;
+            }
+            td{
+                border: 1px solid black;
+                
+            }
+            td:first-child{
+                background-color: lightblue;
+            }
+            td:nth-child(2){
+                background-color: beige;
+            }
+        </style>
 </head>
 <body>
     
