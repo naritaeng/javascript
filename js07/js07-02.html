@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>예제</title>
+    <script>
+
+        const place = []
+        for(i=0;i<6;i++){
+            const ran = Math.floor(Math.random()*45)+1
+            if(place.indexOf(ran)===-1){
+            console.log(ran)
+            place[i]=ran
+            } else {
+                i--;
+            }
+        }
+        console.log(place)
+        
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

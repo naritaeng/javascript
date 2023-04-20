@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>온도색상</title>
+    <script>
+        const tem = prompt('현재 온도를 입력하세요.')
+        const cold = '추워요'
+        const cool = '시원하네요'
+        const warm = '따뜻하네요'
+        const hot = '더워요'
+        const sohot = '많이더워요'
+        if(tem<16){
+            console.log(`지금 온도는 ${tem}도 이며,상태는 쌀쌀해요.`)  
+        } else if(tem>15 || tem<22){
+            console.log(`지금 온도는 ${tem}도 이며, 상태는 시원하네요.`)
+        } else if(tem>21 || tem<28){
+            console.log(`지금 온도는 ${tem}도 이며, 상태는 따뜻하네요.`)
+        } else if(tem>27 || tem<32){
+            console.log(`지금 온도는 ${tem}도 이며, 상태는 더워요.`)
+        } else if(tem>31) {
+            console.log(`지금 온도는 ${tem}도 이며, 상태는 많이 더워요`)
+        }
+
+        let list = ''
+            list += `<table>
+                        <tr>
+                            <td colspan="6">16미만</td>
+                            <td colspan="4">16이상~22미만</td>
+                            <td colspan="4">22이상~28미만</td>
+                            <td colspan="3">28이상~32미만</td>
+                            <td colspan="6">32이상</td>
+                        </tr>
+                        <tr>
+                            <td></td><td></td><td></td><td></td><td></td><td></td>
+                            <td></td><td></td><td></td><td></td>
+                            <td></td><td></td><td></td><td></td>
+                            <td></td><td></td><td></td>
+                            <td></td><td></td><td></td><td></td><td></td><td></td>
+                        </tr>
+                        <tr>
+                            <td colspan="6"></td>
+                            <td colspan="4"></td>
+                            <td colspan="4"></td>
+                            <td colspan="3"></td>
+                            <td colspan="6"></td>
+                        </tr>
+                        </table>`
+        document.write(list)
+    </script>
+    <style>
+        table {
+            width: 500px;
+            height: 200px;
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+        td {
+            width: 50px;
+            height: 50px;
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+    </style>
+</head>
+<body>
+    
+</body>
+</html>
