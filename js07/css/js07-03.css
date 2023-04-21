@@ -1,0 +1,37 @@
+table {
+    width: auto;
+    border: 3px solid black;
+    border-collapse: collapse;
+    font-size: 0.8rem;
+    text-align:center;
+    box-shadow: 3px 3px rgb(160, 158, 158);
+    margin-top: 100px;
+    font-weight: bold;
+}
+td {
+    width: 100px;
+    height: 20px;
+    border: 1px solid black;
+    border-collapse: collapse;
+    background-color: rgb(220, 234, 245);
+}
+h1 {text-align: center;animation: h 1s alternate infinite ease-in;}
+.cold {background-color: blueviolet;transition: 0.3s linear;}
+.cool {background-color: blue;transition: 0.3s linear;}
+.warm {background-color: yellow;transition: 0.3s linear;}
+.hot {background-color: orange;transition: 0.3s linear;}
+.sohot {background-color: red;transition: 0.3s linear;}
+.cold:hover {transform: scale(1.1);}
+.cool:hover {transform: scale(1.1);}
+.warm:hover {transform: scale(1.1);}
+.hot:hover {transform: scale(1.1);}
+.sohot:hover {transform: scale(1.1);}
+@keyframes h {
+    0% {transform: scale(); color: white;}
+    100% {transform: scale(1.05);}
+}
+.back {
+    width: 100%;
+    height: 100%;
+    background-color: lightseagreen;
+}
