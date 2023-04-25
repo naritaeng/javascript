@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <script>
+        function lottoRan(){
+            let arr = []
+            for(let i=0;i<6;i++){
+                const ran = Math.floor(Math.random()*45)+1
+                arr.push(ran)
+            }
+        console.log(arr)
+        document.write(`<button onclick="lottoRan()">랜덤추천</button><h1>랜덤추천 버튼을 눌렀습니다!!<br>${arr}</h1>`)
+        }
+        function lottoUp(){
+             arr = []
+            for(let j=0;j<6;j++){
+                let ran = Math.floor(Math.random()*45)+1
+                    while(true){
+                        if(arr.indexOf(ran)===-1){
+                            arr[j]=ran
+                            break;
+                        } else {
+                            ran = Math.floor(Math.random()*45)+1
+                        }
+                    }
+            }
+        document.write(`<button onclick="lottoUp()">오름차순추천</button><h1>오름차순추천 버튼을 눌렀습니다!!<br>${arr.sort((a,b)=>(a-b))}</h1>`)
+        }
+    </script>
+</head>
+<body>
+    <button onclick="lottoRan()">랜덤추천</button>
+    <button onclick="lottoUp()">오름차순추천</button>
+</body>
+</html>

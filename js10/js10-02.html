@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>구구단연습(for)</title>
+    <script>
+        let list = ""
+        for(let i=2;i<=9;i++){
+            list += `<div class="gugu"><h3>${i}단</h3>
+                        <div class="content">${i} X 1 = ${i*1}</div>
+                        <div class="content">${i} X 2 = ${i*2}</div>
+                        <div class="content">${i} X 3 = ${i*3}</div>
+                        <div class="content">${i} X 4 = ${i*4}</div>
+                        <div class="content">${i} X 5 = ${i*5}</div>
+                        <div class="content">${i} X 6 = ${i*6}</div>
+                        <div class="content">${i} X 7 = ${i*7}</div>
+                        <div class="content">${i} X 8 = ${i*8}</div>
+                        <div class="content">${i} X 9 = ${i*9}</div>
+                     </div>`
+            }
+    
+        document.write(list)
+        
+
+    </script>
+    <style>
+        body{
+            display:flex;
+        }
+
+        .gugu{
+            flex-direction:column;
+            flex-wrap: wrap;
+            background-color: yellow;
+            width: 150px;
+            margin: 20px;
+        }
+        .content{
+            background-color: lightblue;
+            width: 150px;
+        }
+        div{
+            text-align:center;
+        }
+    </style>
+</head>
+<body>
+    
+</body>
+</html>

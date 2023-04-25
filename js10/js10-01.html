@@ -4,15 +4,40 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>예제</title>
-    <script>
-        // (1) 1부터 45까지 임의의 수를 6자리를 중복없이 뽑아 
-        // 차례로 나열하여 배열에다가 그 값을 넣으시오
-        // (2) 위의 배열을 10000개 준비하여 
-        // 각 번호별로 나온 수를 카운팅하라
-        const count = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-                        0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-                        0,0,0,0,0]
+    <title></title>
+    <style>
+      div{
+        background-color: rgb(190, 190, 236);
+        margin: 0 0 10px 0;
+        animation: chart 1s alternate infinite ease-in;
+        transition: 0.3s ease-in;
+      }
+      @keyframes chart {
+        0%{
+        
+        }
+        100%{
+        background-color: brown;
+        
+        }
+      }
+      div:hover{
+        transform: scale(1.05);
+        
+      }
+      
+    </style>
+</head>
+<body>
+    <div>
+        <canvas id="myChart"></canvas>
+      </div>
+      
+      <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+      
+      <script>
+        const count = []
+        for(let r=0;r<45;r++)count.push(0)
         let total = 0;
         let arr = []
         function lotto(){
@@ -30,7 +55,7 @@
             }
             console.log(arr.sort((a,b)=>(a-b)))
         }
-        for(let i=0;i<10000;i++){
+        for(let i=0;i<100;i++){
             //console.log(i+1)
             lotto()
             for(let j=0;j<6;j++){
@@ -44,6 +69,35 @@
             }   
         }
         
+        
+        
+        
+        
+       /*차트 그리기*/ 
+        const ctx = document.getElementById('myChart');
+        
+        new Chart(ctx, {
+          type: 'bar',
+          data: {
+            labels: ['1번','2번','3번','4번','5번','6번','7번','8번','9번','10번','11번','12번','13번','14번','15번',
+                    '16번','17번','18번','19번','20번','21번','22번','23번','24번','25번','26번','27번','28번','29번','30번',
+                    '31번','32번','33번','34번','35번','36번','37번','38번','39번','40번','41번','42번','43번','44번','45번'],
+            datasets: [{
+              label: '# of Votes',
+              data: count,
+              backgroundColor: 'yellow',
+              borderColor: 'red',
+              borderWidth: 1.5
+            }]
+          },
+          options: {
+            scales: {
+              y: {
+                beginAtZero: true
+              }
+            }
+          }
+        });
         let list = ""
             list += `<table>
                         <tr><th colspan="6">각 번호별 나온 횟수</th></tr>
@@ -172,9 +226,9 @@
                             <td colspan="3">${total}</td>
                         </tr>
                     </table>`
-        document.write(list)
-    </script>
-    <style>
+                    document.write(list)
+      </script>
+      <style>
         
         table{
             width:100%;
@@ -196,8 +250,5 @@
         }
         
     </style>
-</head>
-<body>
-    
 </body>
 </html>

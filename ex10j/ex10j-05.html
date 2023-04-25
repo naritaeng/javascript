@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>구구단 함수연습</title>
+    <script>
+        //구구단 2단부터 4단까지의 버튼을 만들고 
+        //버튼을 누르면 해당 구구단을 표로 나타내어라
+        //그리고 다른 버튼을 누르면 다른 구구단도 보이게 해라.
+        const arr = [2,3,4]
+        let list = ""
+        function gugu2(){
+            document.open()
+            alert(`2단을 선택하셨습니다.`)
+                for(let i=1;i<10;i++){
+                    list += `<div>${arr[0]} X ${i} = ${arr[0]*i}</div>`
+                }
+                document.write(`<button onclick="gugu2()"style="margin:10px;width:80px;height:80px;">2단</button>`)
+                document.write(`<button onclick="gugu3()"style="margin:10px;width:80px;height:80px;">3단</button>`)
+                document.write(`<button onclick="gugu4()"style="margin:10px;width:80px;height:80px;">4단</button>`)
+                document.write(list)
+                document.close()
+        }
+        function gugu3(){
+            alert(`3단을 선택하셨습니다.`)
+                for(let i=1;i<10;i++){
+                    list += `<div>${arr[1]} X ${i} = ${arr[1]*i}</div>`
+                }
+                document.write(`<button onclick="gugu2()"style="margin:10px;width:80px;height:80px;">2단</button>`)
+                document.write(`<button onclick="gugu3()"style="margin:10px;width:80px;height:80px;">3단</button>`)
+                document.write(`<button onclick="gugu4()"style="margin:10px;width:80px;height:80px;">4단</button>`)
+                document.write(list)
+                document.close()
+            }
+        function gugu4(){
+            alert(`4단을 선택하셨습니다.`)
+                for(let i=1;i<10;i++){
+                    list += `<div>${arr[2]} X ${i} = ${arr[2]*i}</div>`
+                }
+                document.write(`<button onclick="gugu2()"style="margin:10px;width:80px;height:80px;">2단</button>`)
+                document.write(`<button onclick="gugu3()"style="margin:10px;width:80px;height:80px;">3단</button>`)
+                document.write(`<button onclick="gugu4()"style="margin:10px;width:80px;height:80px;">4단</button>`)
+                document.write(list)
+                document.close()
+            }
+    </script>
+    <style>
+        body{
+            margin: 50px;
+        }
+        .head{
+            width:300px;
+            height:50px;
+            background-color:gold; 
+            transition: 1s ease-in;
+        }
+        button{
+            width: 80px;
+            height: 80px;
+        }
+    </style>
+
+</head>
+<body>
+    <button onclick="gugu2()">2단</button>
+    <button onclick="gugu3()">3단</button>
+    <button onclick="gugu4()">4단</button>
+</body>
+</html>
