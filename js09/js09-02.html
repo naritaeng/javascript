@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>예제</title>
+    <script>
+        // (1) 1부터 45까지 임의의 수를 6자리를 중복없이 뽑아 
+        // 차례로 나열하여 배열에다가 그 값을 넣으시오
+        // (2) 위의 배열을 10000개 준비하여 
+        // 각 번호별로 나온 수를 카운팅하라
+        
+        const count = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+                        0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+                        0,0,0,0,0]
+        let total = 0;
+        let arr = []
+        function lotto(){
+            arr = []
+            for(let i=0;i<6;i++){
+                let ran = Math.floor(Math.random()*45)+1
+                while(true){
+                    if(arr.indexOf(ran)===-1){
+                    arr[i]=ran
+                    break;
+                    } else {
+                    ran = Math.floor(Math.random()*45)+1
+                    }
+                }
+            }
+            console.log(arr.sort((a,b)=>(a-b)))
+        }
+        for(let i=0;i<10000;i++){
+            //console.log(i+1)
+            lotto()
+            for(let j=0;j<6;j++){
+                for(let k=0;k<count.length;k++){
+                    if(k+1===arr[j]){
+                        count[k]+=1
+                        //console.log(j+1,count[j])
+                        total+=1
+                    }
+                }
+            }   
+        }
+        let list = ""
+            list += `<table>
+                        <tr><th colspan="6">각 번호별 나온 횟수</th></tr>
+                        <tr>
+                            <th>번호 : 1</th>
+                            <td>${count[0]}</td>
+                            <th>번호 : 15</th>
+                            <td>${count[14]}</td>
+                            <th>번호 : 31</th>
+                            <td>${count[30]}</td>
+                        </tr>
+                        <tr>
+                            <th>번호 : 2</th>
+                            <td>${count[1]}</td>
+                            <th>번호 : 17</th>
+                            <td>${count[16]}</td>
+                            <th>번호 : 32</th>
+                            <td>${count[31]}</td>
+                        </tr>
+                        <tr>
+                            <th>번호 : 3</th>
+                            <td>${count[2]}</td>
+                            <th>번호 : 18</th>
+                            <td>${count[17]}</td>
+                            <th>번호 : 33</th>
+                            <td>${count[32]}</td>
+                        </tr>
+                        <tr>
+                            <th>번호 : 4</th>
+                            <td>${count[3]}</td>
+                            <th>번호 : 19</th>
+                            <td>${count[18]}</td>
+                            <th>번호 : 34</th>
+                            <td>${count[33]}</td>
+                        </tr>
+                        <tr>
+                            <th>번호 : 5</th>
+                            <td>${count[4]}</td>
+                            <th>번호 : 20</th>
+                            <td>${count[19]}</td>
+                            <th>번호 : 35</th>
+                            <td>${count[34]}</td>
+                        </tr>
+                        <tr>
+                            <th>번호 : 6</th>
+                            <td>${count[5]}</td>
+                            <th>번호 : 21</th>
+                            <td>${count[20]}</td>
+                            <th>번호 : 36</th>
+                            <td>${count[35]}</td>
+                        </tr>
+                        <tr>
+                            <th>번호 : 7</th>
+                            <td>${count[6]}</td>
+                            <th>번호 : 22</th>
+                            <td>${count[21]}</td>
+                            <th>번호 : 37</th>
+                            <td>${count[36]}</td>
+                        </tr>
+                        <tr>
+                            <th>번호 : 8</th>
+                            <td>${count[7]}</td>
+                            <th>번호 : 23</th>
+                            <td>${count[24]}</td>
+                            <th>번호 : 38</th>
+                            <td>${count[37]}</td>
+                        </tr>
+                        <tr>
+                            <th>번호 : 9</th>
+                            <td>${count[8]}</td>
+                            <th>번호 : 24</th>
+                            <td>${count[23]}</td>
+                            <th>번호 : 39</th>
+                            <td>${count[38]}</td>
+                        </tr>
+                        <tr>
+                            <th>번호 : 10</th>
+                            <td>${count[9]}</td>
+                            <th>번호 : 25</th>
+                            <td>${count[24]}</td>
+                            <th>번호 : 40</th>
+                            <td>${count[39]}</td>
+                        </tr>
+                        <tr>
+                            <th>번호 : 11</th>
+                            <td>${count[10]}</td>
+                            <th>번호 : 26</th>
+                            <td>${count[25]}</td>
+                            <th>번호 : 41</th>
+                            <td>${count[40]}</td>
+                        </tr>
+                        <tr>
+                            <th>번호 : 12</th>
+                            <td>${count[11]}</td>
+                            <th>번호 : 27</th>
+                            <td>${count[26]}</td>
+                            <th>번호 : 42</th>
+                            <td>${count[41]}</td>
+                        </tr>
+                        <tr>
+                            <th>번호 : 13</th>
+                            <td>${count[12]}</td>
+                            <th>번호 : 28</th>
+                            <td>${count[27]}</td>
+                            <th>번호 : 43</th>
+                            <td>${count[42]}</td>
+                        </tr>
+                        <tr>
+                            <th>번호 : 14</th>
+                            <td>${count[13]}</td>
+                            <th>번호 : 29</th>
+                            <td>${count[28]}</td>
+                            <th>번호 : 44</th>
+                            <td>${count[43]}</td>
+                        </tr>
+                        <tr>
+                            <th>번호 : 15</th>
+                            <td>${count[14]}</td>
+                            <th>번호 : 30</th>
+                            <td>${count[29]}</td>
+                            <th>번호 : 45</th>
+                            <td>${count[44]}</td>
+                        </tr>
+                        <tr>
+                            <th class="plus" colspan="3">합계</th>
+                            <td colspan="3">${total}</td>
+                        </tr>
+                    </table>`
+        document.write(list)
+    </script>
+    <style>
+        
+        table{
+            width:100%;
+            border:1px solid black;
+            border-collapse:collapse;
+            text-align: center;
+            
+        }
+        th,td{
+            border:1px solid black;
+        }
+        th:nth-child(odd){
+            background-color: Yellow;
+        }
+        th:nth-last-child(1){
+            background-color: lightblue;
+        }
+        td:nth-child(even){
+            background-color: beige;
+        }
+    </style>
+</head>
+<body>
+    
+</body>
+</html>
