@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>함수 예제</title>
+    <script>
+        //total()이라는 함수를 만들어라.
+        //기능은 매개변수 a,b를 넣으면
+        //a부터 b까지 값을 더하게 하라.
+        //아무것도 넣지 않으면 자동으로 1부터 10까지의 합을 출력한다.
+
+        const input1 = prompt('첫번째 숫자를 입력하세요.')*1
+        const input2 = prompt('두번째 숫자를 입력하세요.')*1
+        
+        function total(a,b){
+            let add = 0
+            for(let i=input1;i<=input2;i++){
+                add+=i
+            } 
+            if(Boolean(input1)==false && Boolean(input2)==false){
+                for(let j=1;j<=10;j++){
+                    add+=j
+                }
+            }
+         return add
+        }
+        console.log(total(input1,input2))
+
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

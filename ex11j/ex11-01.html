@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>예제</title>
+    <script>
+        const arr = [800000,2200000,800000,2000000,120000,80000,50000]
+        
+        function sale(per){
+            let dis = []
+            let list = ""
+            
+            for(let i=0;i<7;i++){
+                dis.push(`${arr[i]*per}`)
+            }
+            console.log(arr)
+            list += `<table style="border: 1px solid black;border-collapse: collapse;text-align: center;width: 500px;height: 400px;margin: 50px;">
+                        <tr>
+                            <th colspan="4">판매 품목</th>
+                        </tr>
+                        <tr style="background-color: orange;">
+                            <th class="list">No.</th>
+                            <th class="list">품목</th>
+                            <th class="list">정가</th>
+                            <th class="list">할인율</th>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>컴퓨터</td>
+                            <td>₩${arr[0]}</td>
+                            <td>₩${dis[0]}</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>노트북</td>
+                            <td>₩${arr[1]}</td>
+                            <td>₩${dis[1]}</td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>태블릿</td>
+                            <td>₩${arr[2]}</td>
+                            <td>₩${dis[2]}</td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td>스마트폰</td>
+                            <td>₩${arr[3]}</td>
+                            <td>₩${dis[3]}</td>
+                        </tr>
+                        <tr>
+                            <td>5</td>
+                            <td>공유기</td>
+                            <td>₩${arr[4]}</td>
+                            <td>₩${dis[4]}</td>
+                        </tr>
+                        <tr>
+                            <td>6</td>
+                            <td>키보드</td>
+                            <td>₩${arr[5]}</td>
+                            <td>₩${dis[5]}</td>
+                        </tr>
+                        <tr>
+                            <td>7</td>
+                            <td>마우스</td>
+                            <td>₩${arr[6]}</td>
+                            <td>₩${dis[6]}</td>
+                        </tr>
+                        <tr>
+                            <th colspan="2">합계</th>
+                            <td>₩${arr[0]+arr[1]+arr[2]+arr[3]+arr[4]+arr[5]+arr[6]}</td>
+                            <td>₩${dis[0]+dis[1]+dis[2]+dis[3]+dis[4]+dis[5]+dis[6]}</td>
+                        </tr>
+                    </table>`
+            list += `<div class="box" style="width: 500px;height: 200px;margin: 50px;display: flex;justify-content: space-between;">
+                        <button onclick="sale(0.9)" style="width:100px;height:50px;">10%</button>
+                        <button onclick="sale(0.8)" style="width:100px;height:50px;">20%</button>
+                        <button onclick="sale(0.7)" style="width:100px;height:50px;">30%</button>
+                        <button onclick="sale(0.6)" style="width:100px;height:50px;">40%</button>
+                    </div>`
+            document.close()
+            document.write(list)
+        }
+        let list = ''
+        list += `<table style="border: 1px solid black;border-collapse: collapse;text-align: center;width: 500px;height: 400px;margin: 50px;">
+                    <tr>
+                        <th colspan="4">판매 품목</th>
+                    </tr>
+                    <tr style="background-color: orange;">
+                        <th class="list">No.</th><th class="list">품목</th><th class="list">정가</th><th class="list">할인율</th>
+                    </tr>
+                    <tr>
+                        <td>1</td><td>컴퓨터</td><td>₩${arr[0]}</td><td></td>
+                    </tr>
+                    <tr>
+                        <td>2</td><td>노트북</td><td>₩${arr[1]}</td><td></td>
+                    </tr>
+                    <tr><td>3</td><td>태블릿</td><td>₩${arr[2]}</td><td></td>
+                    </tr>
+                    <tr><td>4</td><td>스마트폰</td><td>₩${arr[3]}</td><td></td>
+                    </tr>
+                    <tr><td>5</td><td>공유기</td><td>₩${arr[4]}</td><td></td>
+                    </tr>
+                    <tr><td>6</td><td>키보드</td><td>₩${arr[5]}</td><td></td>
+                    </tr>
+                    <tr><td>7</td><td>마우스</td><td>₩${arr[6]}</td><td></td>
+                    </tr>
+                    <tr><th colspan="2">합계</th><td>₩${arr[0]+arr[1]+arr[2]+arr[3]+arr[4]+arr[5]+arr[6]}</td><td></td>
+                    </tr>
+                </table>`
+        
+        document.write(list)
+    </script>
+    <style>
+        tr>th,td{
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+    </style>
+</head>
+<body>
+    <div class="box" style="width: 500px;height: 200px;margin: 50px;display: flex;justify-content: space-between;">
+        <button onclick="sale(0.9)" style="width:100px;height:50px;">10%</button>
+        <button onclick="sale(0.8)" style="width:100px;height:50px;">20%</button>
+        <button onclick="sale(0.7)" style="width:100px;height:50px;">30%</button>
+        <button onclick="sale(0.6)" style="width:100px;height:50px;">40%</button>
+    </div>
+</body>
+</html>
