@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>최솟값 구하기 풀이</title>
+    <script>
+        //최소 최대가 나오는 함수 만들기
+        const a = [44,66,0,-11,-22,88]
+        function comp(a){
+            let vs = a[0] // 임시로 제일 첫 번째 요소를 넣어줌
+            for(let i=0;i<a.length;i++){ // 배열 길이만큼 포문을 돌림
+                if(vs > a[i]) 
+                vs = a[i]
+            }
+            return vs
+        }
+        console.log(min(a))
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

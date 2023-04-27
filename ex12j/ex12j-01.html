@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>매개변수 최솟값 구하기</title>
+    <script>
+        //매개변수 4개를 넣었을 때 그 중
+        //가장 작은 수를 리턴하여라
+        const input1 = prompt('첫번째 숫자를 입력하세요.')*1
+        const input2 = prompt('두번째 숫자를 입력하세요.')*1
+        const input3 = prompt('세번째 숫자를 입력하세요.')*1
+        const input4 = prompt('네번째 숫자를 입력하세요.')*1
+        const arr = [input1,input2,input3,input4]
+        function min(arr){
+            let output = arr[0]
+            for(const item of arr){
+                if(output>item){
+                    output=item
+                }
+            }
+            return output
+        }
+        console.log(`${arr}중에서` +"\n"+`최솟값:${min(arr)}`)
+        function max(arr){
+            let output = arr[0]
+            for(const item of arr){
+                if(output<item){
+                    output=item
+                }
+            }
+            return output
+        }
+        console.log(`${arr}중에서` +"\n"+`최댓값:${max(arr)}`)
+        
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
