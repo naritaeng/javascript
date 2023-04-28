@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>전개연산자</title>
+    <script>
+        //위의 배열을 total이라는 배열 하나에 차례로 넣어라
+        //배열을 모두 합치면 123456789
+        //배열인지 확인하기 Array.isArray(total)=true
+        //total.length=9
+        const arr1 = [1,2,3]
+        const arr2 = [4,5,6]
+        const arr3 = [7,8,9]
+        const total = []
+        function push(...a){
+            if(Array.isArray(a)){
+                for(let i=0;i<=2;i++)total.push(arr1[i])
+                for(let j=0;j<=2;j++)total.push(arr2[j])
+                for(let k=0;k<=2;k++)total.push(arr3[k])
+            }
+        }        
+        push(arr1,arr2,arr3)
+        document.write(`<h3>arr1 배열 값은:[${arr1}]<br></h3>`)
+        document.write(`<h3>arr2 배열 값은:[${arr2}]<br></h3>`)
+        document.write(`<h3>arr3 배열 값은:[${arr3}]<br></h3>`)
+        document.write(`<h3>배열을 모두 합치면[${total}]<br></h3>`)
+        document.write(`<h3>배열인지 확인하기:(${Array.isArray(total)})<br></h3>`)
+        document.write(`<h3>배열의 길이는 total length = ${total.length}<br></h3>`)
+        console.log(total)
+        console.log(Array.isArray(total))
+        console.log(total.length)
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

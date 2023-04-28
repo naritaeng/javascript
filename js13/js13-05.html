@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자료형에 따른 함수동작</title>
+    <script>
+        function min(...rests){
+            let output
+            let items
+            // console.log(rests)
+            // console.log(typeof rests)
+            console.log(typeof rests[0])
+            // console.log(Array.isArray(rests)) // Array인지 판별 ok
+            // console.log(Array.isArray(rests[0]))
+            if(Array.isArray(rests[0])){ // 숫자를 넣었을 경우 false 배열을 넣었을 경우 true
+                output = rests[0][0]
+                items = rests[0]
+                console.log('배열이에요.')
+            }else if(typeof(rests[0]==='number')){
+                output = rests[0]
+                items = rests
+                console.log('숫자에요.')
+            }
+            for(const item of items)if(output>item)output=item
+            return output
+        }
+        console.log(min(22,33,44,55,66,77))
+        console.log(min([22,33,44,55,66,77]))
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
