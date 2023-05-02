@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>forEach 예제2</title>
+    <script>
+        const arr = [1,2,3,4,5,6,7,8,9,10]
+        const arr1 = []
+        const arr2 = []
+        
+        arr.forEach(function(v){
+            if(v%2==0){
+                arr1.push(v)
+            } else{arr2.push(v)}
+        })
+        console.log(arr)
+        console.log(arr1)
+        console.log(arr2)
+        
+        function oddeven(a){
+            let list = ""
+            if(a==2){
+                document.write(`<div>${arr1}</div>`)
+            }
+            if(a==1){
+                document.write(`<div>${arr2}</div>`)
+            }
+            list +=`<button onclick="oddeven(2)">짝수</button>
+                    <button onclick="oddeven(1)">홀수</button>`
+            document.write(list)
+            document.close()
+        }
+    </script>
+    <style>
+        button{
+            width: 100px;
+            height: 100px;
+            margin: 5px;
+            background-color: yellow;
+        }
+        button:hover{
+            background-color: lightblue;
+        }
+    </style>
+</head>
+<body>
+    <button onclick="oddeven(2)">짝수</button>
+    <button onclick="oddeven(1)">홀수</button>
+</body>
+</html>
