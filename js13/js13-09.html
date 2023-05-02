@@ -11,29 +11,18 @@
         // 글자길이가 긴 순서대로 나열하시오.
         const fruits = ['apple','pear','watermelon','melon','peach','strawberry','mango','kiwi','grape','orange']
         const arr = []
-        let king
-        let array
+        console.log(fruits)
+
         function length(a){
-            let array = fruits
-            for(let i=0;i<fruits.length;i++){
-                if(fruits[i].length>=5){
-                    arr.push(fruits[i])
-                }
-            }
+            for(let i=0;i<fruits.length;i++)
+            if(fruits[i].length>=5)
+            arr.push(fruits[i])
+            console.log(arr)
+            arr.sort((b,a)=>a.length-b.length);
+            console.log(`글자길이순 : [${arr}]`)
         }
         
-        function king(a)
-            king = arr[0]
-            array = arr
-            for(const long of array)
-                
-                    
-                
-            
-            console.log(king)
-        
         length(fruits)
-        console.log(arr)
     </script>
 </head>
 <body>
