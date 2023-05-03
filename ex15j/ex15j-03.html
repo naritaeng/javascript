@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <script>
+        // 문제: map()을 사용하여 1부터 100까지의 값을
+        // 차례로 담고 있는 배열을 생성하여라.
+        // 단, 배열 요소중 11의 배수일 때는 두 배의 값을 가지게 해라.
+
+        const arr = Array(100).fill(0).map((v,i)=>v=i+1);
+        arr.map((v,i)=>{if(v%11==0){return arr[i]=v*2}});
+        
+        document.write(`<div>${arr}</div>`)
+        
+        console.log(arr)
+    </script>
+    <style>
+        div{
+            width:300px;
+            height:300px;
+            background-color: yellow;
+            word-break:break-all;
+            font-size: 1.2rem;
+        }
+    </style>
+</head>
+<body>
+    
+</body>
+</html>
