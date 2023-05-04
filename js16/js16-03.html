@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>filter 예제</title>
+    <script>
+        // ['apple','pear','watermelon','melon','peach','strawberry','mango','kiwi','grape','orange','mandarin']
+        // 글자길이가 5글자 이상만 뽑아서 새로운 배열에 넣으세요.
+        // 글자길이가 긴 순서대로 나열하시오.
+        const fruits = ['apple','pear','watermelon','melon','peach','strawberry','mango','kiwi','grape','orange']
+        const arr = fruits.filter((v)=>{return v.length>=5})
+        arr.sort((a,b)=>(b.length-a.length))
+        console.log(arr)
+        document.write(`<div id="move"><h3>${arr}</h3></div>`)
+        document.write(`<div id="heart"><h3>${arr}</h3></div>`)
+        document.write(`<div id="hide"><h3>${arr}</h3></div>`)
+
+    </script>
+    <style>
+        #move{
+            height:150px;
+            width:150px;
+            background-color: lightgreen;
+            word-break: break-all;
+            animation: fruits 5s infinite ease;
+        }
+        #heart{
+            width: 200px;
+            height: 200px;
+            border-radius:20px;
+            background-color: orange;
+            word-break: break-all;
+            margin: 50px;
+            animation: heart 0.5s alternate infinite linear;
+        }
+        #hide{
+            height: 50px;
+            background-color:lightgrey;
+        }
+        @keyframes heart{
+            0%{
+                transform: scale();
+            }
+            100%{
+                transform: scale(1.05);
+            }
+        }
+        
+        @keyframes fruits{
+            0%{
+                background-color: lightgreen;
+            }
+            25%{
+                height:150px;
+                width: 300px;
+                background-color: lightcoral;
+            }
+            50%{
+                height: 300px;
+                width: 300px;
+                background-color: lightblue;
+            }
+            75%{
+                height:300px;
+                width:150px;
+                background-color: lightpink;
+            }
+            100%{
+                height:150px;
+                width:150px;
+                background-color: lightgreen;
+            }
+        }
+    </style>
+</head>
+<body>
+    
+</body>
+</html>
