@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>timer 예제2</title>
+    <script>
+        // // 2) 붉은색 원(켜져있고)이 1초
+        // //    흰색 원(꺼져있는) 0.5초
+        // //    10회 반복되는 램프를 표현한 페이지를 만들어라.
+        
+        const tid = setInterval(()=>{
+            const tid2 = setInterval(()=>{
+                document.write(`<div style="border: 2px solid black;width: 200px;height: 200px;background-color:beige;border-radius:100px;"></div>`)
+                document.close()
+            },0.5*1000)
+            
+            setTimeout(()=>{
+                clearInterval(tid2)
+                    document.write(`<div style="border: 2px solid black;width: 200px;height: 200px;background-color:red;border-radius:100px;"></div>`)
+                    document.close()
+                },1*1000)
+        },1.5*1000)
+
+        setTimeout(()=>{
+            clearInterval(tid)
+        },15*1000)
+        
+        
+        
+    </script>
+    
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>신호등</title>
+    <script>
+        // 초록불 3초 -> 노란불 1초 -> 빨간불 4초 -> 반복
+        const tid = setInterval(()=>{
+            const tid1 = setInterval(()=>{
+                document.close()
+                document.write(`<div class="big" style="margin: 100px;border: 3px solid black; width:500px; height: 200px; border-radius:30px;display:flex;align-items:center;justify-content:space-around;">
+                                    <div style="border: 2px solid black;width: 100px; height: 100px; border-radius:100px;"></div>
+                                    <div style="border: 2px solid black;width: 100px; height: 100px; border-radius:100px;"></div>
+                                    <div style="border: 2px solid black;width: 100px; height: 100px; background-color:green;border-radius:100px;"></div>
+                                </div>`)
+                })
+            
+                setTimeout(()=>{
+                    clearInterval(tid1)
+                },3*1000)
+            
+            const tid2 = setInterval(()=>{
+                document.close()
+                document.write(`<div class="big" style="margin: 100px;border: 3px solid black; width:500px; height: 200px; border-radius:30px;display:flex;align-items:center;justify-content:space-around;">
+                                    <div style="border: 2px solid black;width: 100px; height: 100px;border-radius:100px;"></div>
+                                    <div style="border: 2px solid black;width: 100px; height: 100px;background-color:yellow;border-radius:100px;"></div>
+                                    <div style="border: 2px solid black;width: 100px; height: 100px;border-radius:100px;"></div>
+                                </div>`)
+                },3*1000)
+                
+                setTimeout(()=>{
+                    clearInterval(tid2)
+                },4*1000)
+            
+                const tid3 = setInterval(()=>{
+                document.close()
+                document.write(`<div class="big" style="margin: 100px;border: 3px solid black; width:500px; height: 200px; border-radius:30px;display:flex;align-items:center;justify-content:space-around;">
+                                    <div style="border: 2px solid black;width: 100px; height: 100px;background-color:red;border-radius:100px;"></div>
+                                    <div style="border: 2px solid black;width: 100px; height: 100px;border-radius:100px;"></div>
+                                    <div style="border: 2px solid black;width: 100px; height: 100px;border-radius:100px;"></div>
+                                </div>`)
+                },4*1000)
+
+                setTimeout(()=>{
+                    clearInterval(tid3)
+                },8*1000)
+            },8*1000)
+    </script>
+    
+</head>
+<body>
+    <div class="big" style="margin: 100px;border: 3px solid black; width:500px; height: 200px; border-radius:30px;display:flex;align-items:center;justify-content:space-around;">
+        <div style="border: 2px solid black;width: 100px; height: 100px;border-radius:100px;"></div>
+        <div style="border: 2px solid black;width: 100px; height: 100px;border-radius:100px;"></div>
+        <div style="border: 2px solid black;width: 100px; height: 100px;border-radius:100px;"></div>
+    </div>
+</body>
+</html>

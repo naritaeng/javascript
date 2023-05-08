@@ -11,20 +11,26 @@
         //    상승하고 멈추는 웹 페이지를 만들어라.
         
         
-        const time = prompt(`숫자를 입력하세요`,1) * 1
-        document.write(`입력하신 초는 ${time}초입니다.`)
+        // const time = prompt(`숫자를 입력하세요`,1) * 1
+        // document.write(`입력하신 초는 ${time}초입니다.`)
+        // let ct = 0;
+        // const tid = setInterval(()=>{
+        //     document.write(`<h1>${++ct}</h1>`)
+        //     if(ct==time){
+        //         setTimeout(()=>{
+        //             clearInterval(tid);
+        //             document.write(`<hr><h1 style="color:red;">${time}초가 되었습니다!!!</h1>`)
+        //         })
+        //     }
+        //     document.close()
+        // },0.5*1000)
+
+        const nInput = prompt(`몇 번째까지 상승할까요?,6`)*1
+        const tInput = prompt(`몇 초 간격으로 상승할까요?,1`)*1
         let ct = 0;
         const tid = setInterval(()=>{
-            document.write(`${++ct}`)
-            if(ct==time){
-                setTimeout(()=>{
-                    clearInterval(tid);
-                    document.write(`<hr><h1 style="color:red;">${time}초가 되었습니다!!!</h1>`)
-                })
-            }
-            document.close()
-        },0.5*1000)
-        
+            document.write(close())
+        })
         
     </script>
 </head>
