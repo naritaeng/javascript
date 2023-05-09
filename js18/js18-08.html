@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>메소드 내부의 this 예제</title>
+    <script>
+        const cat = {
+            name:'나리',
+            sound:'냥냐홍',
+            cry: function(){
+                console.log(`${this.name}는 짖어라고 하면 ${this.sound}~하고 울어요~ `)
+            }
+        }
+        console.log(cat.cry())
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

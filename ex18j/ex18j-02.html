@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>호이스팅2</title>
+    <script>
+        var bb // 1. 펑션 안과 밖에 있을 경우 3. var과 let일 경우
+        function fn(){
+            console.log(bb)
+            bb='나는 호이스팅 되었어'
+        }
+        fn()
+        console.log(bb)
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>메소드 내부의 this</title>
+    <script>
+        const cat = {
+            name:'nari',
+            sound:'냐옹',
+            age:3,
+            eat: function(meow='냐~'){  // 매개변수를 넣어 기능을 할 수 있음
+                console.log(`${cat.name}는 ${meow}하며 밥을 먹습니다.(cat)`)
+                console.log(`${this.name}는 ${meow}하며 밥을 먹습니다.(this)`)
+            }
+        }
+        console.log(cat.eat())
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

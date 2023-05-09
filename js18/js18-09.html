@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>메소드 내부의 this 예제2</title>
+    <script>
+        const dog = {
+            name:'보리',
+            age:14,
+            dna:'말티즈',
+            eat: function(eatsound='챱챱챱'){
+                console.log(`${this.name}는 ${eatsound}하며 밥을 먹습니다. `)
+            },
+            play: function(run='뽈뽈뽈'){
+                console.log(`${this.name}는 ${run}거리며 뛰어 놉니다.`)
+            },
+            wow: function(sound='왕왕'){
+                console.log(`${this.name}는 ${sound}하며 짖습니다.`)
+            }
+        }
+        console.log(dog.eat())
+        console.log(dog.play())
+        console.log(dog.wow())
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
