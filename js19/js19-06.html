@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      const arr = [];
+      arr.sample = 12; // 12
+      arr;
+      console.log(typeof arr); // 'object'
+      const arr2 = [11, 22, 33];
+      console.log(typeof arr2); // 'object'
+      Array.isArray(arr);
+      arr[0] = 11;
+      arr[1] = 22;
+      console.log(arr);
+      arr.sample; // 12
+      arr.forEach((v) => console.log(v)); // 11,12
+    </script>
+  </head>
+  <body></body>
+</html>
