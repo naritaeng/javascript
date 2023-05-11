@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>메소드</title>
+    <script>
+      let str1 = "     안녕하세요     ";
+      console.log(str1);
+      console.log(str1.trim()); // 전과 후의 여백을 없애줌
+
+      let str2 = "a,b,c,d,e,f,g,h";
+      let str2A = str2.split(","); // 문자를 배열로
+      console.log(str2);
+      console.log(str2A);
+
+      // const str = 오늘 학교에서 시험을 아주 잘 쳤어요.
+      // 문장을 인덱스를 부여하여 array를 완성하시오. (단, 띄어쓰기를 기준으로)
+
+      const str3 = "오늘 학교에서 시험을 아주 잘 쳤어요.";
+      const arr = str3.split(" ");
+
+      console.log(arr);
+
+      const str4 = `내가 만약
+                    나비라면
+                    훨훨
+                    날아갈텐데...`;
+
+      const str4A = str4.split("\n");
+      console.log(str4A);
+      for (i in str4A) {
+        str4A[i] = str4A[i].trim();
+      }
+
+      console.log(str4A);
+
+      const str5 = str4A.map((v) => {
+        return v.trim();
+      });
+
+      console.log(str5);
+    </script>
+  </head>
+  <body></body>
+</html>

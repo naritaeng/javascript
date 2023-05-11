@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>프로토타입</title>
+    <script>
+      Number.prototype.power = function (n = 2) {
+        // 기본값으로 n에 2를 넣어줌
+        return this.valueOf() ** n; // valuOf는 그 자체의 값을 뜻함
+      };
+      const a = 12;
+      console.log("a.power():", a.power()); // 넘버타입에 power라는 프로토타입을 적용시켰으니 사용가능 () 안에는 기본값 n이 들어가있음
+      console.log("a.power(3):", a.power(3)); // 3제곱
+      console.log("a.power(4):", a.power(4)); // 4제곱
+    </script>
+  </head>
+  <body></body>
+</html>
