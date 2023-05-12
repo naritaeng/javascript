@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>배열을 오브젝트로(예제)</title>
+    <script>
+      const arr = [
+        "밥먹자",
+        "뛰놀자",
+        "공부하자",
+        "잠자자",
+        "춤추자",
+        "게임하자",
+        "사귀자",
+      ];
+      const key = ["식사", "플레이", "스터디", "수면", "춤", "오락", "연인"];
+      const obj = {};
+
+      arr.forEach((v, i) => {
+        obj[key[i]] = v;
+      });
+
+      console.log(obj);
+      console.log(JSON.stringify(obj));
+    </script>
+  </head>
+  <body></body>
+</html>

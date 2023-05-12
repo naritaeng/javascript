@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>얕은 복사 깊은 복사(p299~302)</title>
+    <script>
+      /* 얕은 복사 */
+      const 구름 = {
+        이름: "구름",
+        나이: 6,
+        종족: "강아지",
+      };
+      //   const 별 = 구름;
+      //   별.이름 = "별";
+      //   별.나이 = 1;
+
+      /* 전개연산자를 이용한 깊은 복사 */
+      //   const 별 = { ...구름 };
+      //   별.이름 = "별";
+      //   별.나이 = 1;
+
+      /* 변경하고 싶은 속성만 추가하기 */
+      //   const 별 = {
+      //     ...구름,
+      //     이름: "별",
+      //     나이: 1,
+      //     예방접종: true,
+      //   };
+
+      /* 전개 부분 뒤로 이동하기 */
+      const 별 = {
+        이름: "별",
+        나이: 1,
+        예방접종: true,
+        ...구름,
+      };
+
+      console.log(JSON.stringify(구름));
+      console.log(JSON.stringify(별));
+    </script>
+  </head>
+  <body></body>
+</html>
