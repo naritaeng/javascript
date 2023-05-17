@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        let ct = 0;
+        let isConnect = false;
+
+        const h1 = document.createElement("h1"); // 생성
+        const conbtn = document.createElement("button");
+        const disbtn = document.createElement("button");
+        const p = document.createElement("p");
+
+        document.body.append(h1, conbtn, disbtn, p); // body에 append 해줌 (나타냄)
+
+        h1.textContent = `클릭 횟수 : ${ct}`; // 태그 내부 텍스트
+        conbtn.textContent = "이벤트 연결";
+        disbtn.textContent = "이벤트 해제";
+        p.textContent = "이벤트 대기";
+
+        h1.style.userSelect = "none"; // h1 속성 더블 클릭시 드래그x
+
+        const fn = () => {
+          // 카운트를 상승 시켜주는 함수
+          h1.innerHTML = `클릭 횟수 : ${ct++}`;
+        };
+
+        conbtn.addEventListener("click", () => {
+          // 이벤트 연결 버튼을 눌렀을때 위의 fn 함수를 불러오는 함수
+          if (isConnect === false) {
+            h1.addEventListener("click", fn);
+            p.textContent = "이벤트 연결중";
+            isConnect = true;
+          }
+        });
+        disbtn.addEventListener("click", () => {
+          // 위와 마찬가지로 해제를 눌렀을때 fn 함수를 불러옴
+          if (isConnect === true) {
+            h1.removeEventListener("click", fn);
+            p.textContent = "이벤트 종료";
+            isConnect = false;
+          }
+        });
+      });
+    </script>
+  </head>
+  <body></body>
+</html>

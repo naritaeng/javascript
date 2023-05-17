@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const divA = document.createElement("div"); // id="first" 속성을 가진 div 선택
+        const divB = document.createElement("div"); // 위와 같음
+        const h1 = document.createElement("h1"); // h1 태그 생성
+        divA.innerHTML = "<h1>첫 번째 div태그</h1>";
+        divB.innerHTML = "<hr><h1>두 번째 div태그</h1>";
+        h1.innerHTML = "내부의 h1";
+
+        document.body.append(divA, divB);
+
+        const div_on = (_) => {
+          divA.appendChild(h1);
+          setTimeout(div2_on, 1000);
+        };
+
+        const div2_on = (_) => {
+          divB.appendChild(h1);
+          setTimeout(div_on, 1000);
+        };
+        div_on();
+      });
+    </script>
+  </head>
+  <body></body>
+</html>

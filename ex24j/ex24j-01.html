@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const divA = document.createElement("div"); // id="first" 속성을 가진 div 선택
+        const divB = document.createElement("div"); // 위와 같음
+        const divC = document.createElement("div"); // 위와 같음
+        const h1 = document.createElement("h1"); // h1 태그 생성
+        const test1 = document.body.append(divA, "날 찾았니?", divB, divC); // append는 리턴 값이 없다.
+        // const test1 = document.body.appendChild(divA).append(h1);
+        console.log(test1);
+      });
+    </script>
+  </head>
+  <body></body>
+</html>

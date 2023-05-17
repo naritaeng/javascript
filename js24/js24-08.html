@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const star = document.createElement("h1");
+        star.textContent = "★";
+        star.style.color = "red";
+        star.style.fontSize = "5rem";
+        star.style.translate = "";
+        document.body.append(star);
+        star.style.position = "absolute";
+
+        let [x, y] = [0, 0];
+        const block = 50;
+        const print = () => {
+          star.style.left = `${x * block}px`;
+          star.style.top = `${y * block}px`;
+        };
+        print();
+
+        const [left, up, right, down] = [37, 38, 39, 40];
+        document.body.addEventListener("keydown", () => {
+          switch (event.keyCode) {
+            case left:
+              x -= 1;
+              break;
+            case up:
+              y -= 1;
+              break;
+            case right:
+              x += 1;
+              break;
+            case down:
+              y += 1;
+              break;
+          }
+          print();
+        });
+      });
+    </script>
+  </head>
+  <body></body>
+</html>
