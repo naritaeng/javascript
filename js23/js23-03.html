@@ -7,13 +7,16 @@
     <title>Document</title>
     <script>
       document.addEventListener("DOMContentLoaded", () => {
-        const rects = document.querySelectorAll("img");
-
-        rects.forEach((v, i) => {
+        for (let i = 0; i < 5; i++) {
+          const imgs = document.createElement("img");
+          document.body.appendChild(imgs);
           const width = (i + 1) * 100;
           const src = `http://placekitten.com/${width}/${width}`;
-          v.setAttribute("src", src); // v.src = src;
-        });
+          imgs.setAttribute("src", src); // v.src = src;
+          imgs.addEventListener("contextmenu", (event) => {
+            event.preventDefault(); // 사진 다운로드를 받지 못하게 함(자바스크립트 기능x 우클릭x)
+          });
+        }
       });
     </script>
   </head>

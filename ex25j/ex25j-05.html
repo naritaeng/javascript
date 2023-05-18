@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const dollar = document.getElementById("dollar");
+        const btn = document.getElementsByTagName("button");
+        let won = document.getElementsByClassName("won");
+        btn[0].addEventListener("click", () => {
+          won = dollar.value * 1300;
+          document.body.append(won);
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <label for="dollar">환전하실 달러를 입력해주세요.</label>
+    <hr />
+    <input type="text" id="dollar" />
+    <button>환전</button>
+    <h1 class="won"></h1>
+  </body>
+</html>

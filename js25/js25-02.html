@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const input = document.querySelector("input"); // body 내부의 input을 선택
+        const btn = document.querySelector("button");
+        const p = document.querySelector("p");
+        btn.style.margin = "10px";
+        btn.style.width = "50px";
+        btn.style.height = "30px";
+        btn.addEventListener("click", () => {
+          // 버튼은 눌렀을 때 inch를 cm로 변환해주는 함수
+          const inch = Number(input.value); // input으로 받는 숫자를 넘버타입으로 지정하고 inch에 선언
+          if (isNaN(inch)) {
+            // inch가 넘버타입이 아닐 경우에 숫자를 입력하라는 문구가 뜨는 조건
+            p.textContent = "숫자를 입력해주세요.";
+            return;
+          }
+          const cm = inch * 2.54; // 변환한 값을 cm에 선언
+          p.textContent = `${cm}cm`; // cm값을 p태그에 출력
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <input type="text" />inch <br />
+    <button>계산</button>
+    <p></p>
+  </body>
+</html>

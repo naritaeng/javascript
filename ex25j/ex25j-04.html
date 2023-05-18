@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>getElementBy</title>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const all = document.querySelectorAll("div");
+        const c1 = document.querySelector(".c1");
+        const i1 = document.querySelector("#i1");
+        const tag = document.getElementsByTagName("div");
+        const name = document.getElementsByName("text1");
+        const c2 = document.getElementsByClassName("c2");
+        const i2 = document.getElementById("i2");
+        console.log(all); // NodeList로 들어감
+        console.log(c1); // div
+        console.log(i1); // div
+        console.log(tag); // HTMLCollection 이름의 유사배열
+        console.log(name); // NodeList
+        console.log(c2); // HTMLCollection 유사배열
+        console.log(i2); // div
+      });
+      /* 선택자 */
+      // querySelector("")
+      // querySelectorAll("") ---> 유사배열화
+      // getElementBy ~~
+      // getElementsBy ~~ --> HTMLCollection 이름의 유사배열
+    </script>
+  </head>
+  <body>
+    <div class="c1">
+      <div id="i1"></div>
+    </div>
+    <div class="c2">
+      <div id="i2"></div>
+    </div>
+    <div class="c2"></div>
+    <textarea name="text1" id="" cols="30" rows="10"></textarea>
+    <textarea name="text1" id="" cols="30" rows="10"></textarea>
+  </body>
+</html>

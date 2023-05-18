@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const star = document.createElement("h1");
+        const dot = document.createElement("h1");
+        const gameinfo = document.createElement("h1");
+        star.textContent = "★";
+        star.style.color = "red";
+        star.style.position = "absolute";
+        dot.textContent = "·";
+        dot.style.color = "blue";
+        dot.style.position = "absolute";
+        dot.style.fontSize = "5rem";
+        gameinfo.textContent = "점수 : / 남은 판수 :";
+        gameinfo.style.float = "right";
+        document.body.append(star, dot, gameinfo);
+
+        let [x, y] = [0, 0];
+        const block = 20;
+
+        const starprint = () => {
+          star.style.left = `${x * block}px`;
+          star.style.top = `${y * block}px`;
+        };
+        starprint();
+
+        const dotprint = () => {
+          const dotx = Math.floor(Math.random() * 1600);
+          const doty = Math.floor(Math.random() * 780);
+          dot.style.left = `${dotx}px`;
+          dot.style.top = `${doty}px`;
+          document.body.append(dot);
+          console.log(dotx);
+          console.log(doty);
+        };
+        dotprint();
+        // const scoreup = ()=>{
+        //     let score = 0
+        //     if(star)
+        // }
+
+        // const [left, up, right, down] = [37, 38, 39, 40];
+        document.body.addEventListener("keydown", () => {
+          switch (event.key) {
+            case "ArrowLeft":
+              x -= 1;
+              break;
+            case "ArrowUp":
+              y -= 1;
+              break;
+            case "ArrowRight":
+              x += 1;
+              break;
+            case "ArrowDown":
+              y += 1;
+              break;
+          }
+          console.log(x, y);
+          starprint();
+        });
+      });
+    </script>
+  </head>
+  <body></body>
+</html>
