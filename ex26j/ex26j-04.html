@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const h1 = document.createElement("h1");
+        const h2 = document.createElement("h2");
+        document.body.append(h1, h2);
+        // for를 사용하여
+        // 1을 100번 더하기
+        const num = 0.1;
+        let sum = 0;
+        for (let i = 0; i < 100; i++) {
+          sum += 1;
+        }
+        console.log(sum);
+        h1.textContent = sum.toFixed(1);
+        h2.textContent = (num + 0.2).toFixed(1);
+      });
+    </script>
+  </head>
+  <body></body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        let 현재값;
+        let 변환상수 = 10;
+
+        const select = document.querySelector("select");
+        const input = document.querySelector("input");
+        const span = document.querySelector("span");
+
+        const calculate = () => {
+          // 입력 값을 해당 옵션으로 계산해주는 함수
+          span.textContent = (현재값 * 변환상수).toFixed(2); // toFixed로 소수점 둘째 자리가지 출력
+        };
+
+        select.addEventListener("change", (event) => {
+          // 옵션을 바꿨을 때 변환상수값을 바꿔주는 함수
+          const options = event.currentTarget.options; // 이벤트에 해당하는 옵션을 선택 후 담아줌
+          const index = event.currentTarget.options.selectedIndex; // 해당 옵션에 인덱스 선택 후 담아줌
+          변환상수 = Number(options[index].value); // 옵션 인덱스의 값을 넘버타입으로 바꾼 후 변환상수에 담아줌
+          calculate(); // 함수 호출
+        });
+
+        input.addEventListener("keyup", (event) => {
+          // 키업으로 입력 값에 이벤트를 주는 함수
+          현재값 = Number(event.currentTarget.value); // 입력 값을 선택하여 넘버타입으로 바꾼 후 현재값에 담아줌
+          calculate(); // 함수 호출
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <input type="text" /> cm =
+    <span></span>
+    <select name="" id="">
+      <option value="10">mm</option>
+      <option value="0.01">m</option>
+      <option value="0.393701">inch</option>
+    </select>
+  </body>
+</html>

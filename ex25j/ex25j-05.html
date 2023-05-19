@@ -9,10 +9,11 @@
       document.addEventListener("DOMContentLoaded", () => {
         const dollar = document.getElementById("dollar");
         const btn = document.getElementsByTagName("button");
-        let won = document.getElementsByClassName("won");
+        const won = document.getElementsByClassName("won");
         btn[0].addEventListener("click", () => {
-          won = dollar.value * 1300;
-          document.body.append(won);
+          const won2 = dollar.value * 1300;
+
+          won[0].textContent = `${won2}원`;
         });
       });
     </script>

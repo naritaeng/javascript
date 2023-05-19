@@ -10,16 +10,17 @@
         const star = document.createElement("h1");
         const dot = document.createElement("h1");
         const gameinfo = document.createElement("h1");
+        const score = document.createElement("h1");
+        let ct = 0;
         star.textContent = "★";
-        star.style.color = "red";
+        star.style.color = "gold";
         star.style.position = "absolute";
-        dot.textContent = "·";
+        dot.textContent = "☆";
         dot.style.color = "blue";
         dot.style.position = "absolute";
-        dot.style.fontSize = "5rem";
-        gameinfo.textContent = "점수 : / 남은 판수 :";
+        gameinfo.textContent = `점수 : ${ct} / 남은 판수 :`;
         gameinfo.style.float = "right";
-        document.body.append(star, dot, gameinfo);
+        document.body.append(star, gameinfo, score);
 
         let [x, y] = [0, 0];
         const block = 20;
@@ -30,20 +31,17 @@
         };
         starprint();
 
+        let dotx = Math.floor(Math.random() * 10);
+        let doty = Math.floor(Math.random() * 10);
+
         const dotprint = () => {
-          const dotx = Math.floor(Math.random() * 1600);
-          const doty = Math.floor(Math.random() * 780);
-          dot.style.left = `${dotx}px`;
-          dot.style.top = `${doty}px`;
+          dot.style.left = `${dotx * block}px`;
+          dot.style.top = `${doty * block}px`;
           document.body.append(dot);
           console.log(dotx);
           console.log(doty);
         };
         dotprint();
-        // const scoreup = ()=>{
-        //     let score = 0
-        //     if(star)
-        // }
 
         // const [left, up, right, down] = [37, 38, 39, 40];
         document.body.addEventListener("keydown", () => {
@@ -63,6 +61,11 @@
           }
           console.log(x, y);
           starprint();
+          if (x == dotx && y == doty) {
+            gameinfo.textContent = `점수 : ${++ct}`;
+
+            dotprint();
+          }
         });
       });
     </script>

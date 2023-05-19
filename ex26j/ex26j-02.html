@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1 style="font-weight: bold; text-align: end">
+      cssText의 속성을 알아보기
+    </h1>
+    <button>넣기 버튼</button>
+    <button>반환 버튼</button>
+    <p></p>
+    <script>
+      // const h1 = document.querySelector('h1')
+      // const p = document.querySelector('h1')
+      const h1 = document.getElementsByTagName("h1"); // 유사배열로 담김
+      const p = document.getElementsByTagName("h1"); // 위와 동일
+      const button = document.getElementsByTagName("button"); // 위와 동일
+      button[0].addEventListener("click", () => {
+        // 배열로 담긴 버튼을 클릭시 이벤트를 주어 css를 먹임
+        h1[0].style.cssText = `color:#32a4a4;
+                                font-size:2em;
+                                text-decoration: underline;`;
+      });
+      button[1].addEventListener("click", () => {
+        p[0].innerHTML = h1[0].style.cssText;
+      });
+    </script>
+  </body>
+</html>
