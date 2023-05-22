@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>단위 변환</title>
+    <link rel="stylesheet" href="./ex27j-01.css" />
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const input = document.getElementById("input1");
+        const output = document.getElementById("output1");
+
+        input.addEventListener("keyup", (value) => {});
+      });
+    </script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="total">
+        <select name="" id="lst">
+          <option value="">길이</option>
+          <option value="">속도</option>
+          <option value="">시간</option>
+        </select>
+      </div>
+      <div class="ipop">
+        <div class="inputbox">
+          <input type="text" id="input1" />
+          <hr />
+          <select name="" id="a1">
+            <option value="">미터(m)</option>
+            <option value="">센치미터(cm)</option>
+            <option value="">밀리미터(mm)</option>
+          </select>
+        </div>
+        <h1>=</h1>
+        <div class="outputbox">
+          <input type="text" id="output1" />
+          <hr />
+          <select name="" id="a2">
+            <option value="">미터(m)</option>
+            <option value="">센치미터(cm)</option>
+            <option value="">밀리미터(mm)</option>
+          </select>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

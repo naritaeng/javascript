@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>p354 할 일 목록 만들기</title>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const h1 = document.createElement("h1");
+        const input = document.createElement("input");
+        const addbtn = document.createElement("button");
+        let addinput = document.createElement("span");
+
+        document.body.append(h1, input, addbtn);
+        h1.textContent = "할 일 목록";
+        addbtn.textContent = "추가하기";
+        input.setAttribute("id", "todo");
+        input.style.height = "30px";
+        input.style.marginRight = "10px";
+
+        // let content = "";
+        // input.addEventListener("change",(e)=>{
+        //     content = e.target.value;
+        // })
+        // addbtn.addEventListener('click'()=>{
+        //     if(content)
+        // })
+        addbtn.addEventListener("click", () => {
+          if (input.value.trim() === "") {
+            alert("할 일을 입력해주세요");
+            return;
+          }
+          const item = document.createElement("div");
+          const delbtn = document.createElement("button");
+          const checkbox = document.createElement("input");
+          const br = document.createElement("br");
+          checkbox.type = "checkbox";
+          delbtn.textContent = "제거하기";
+          addinput.textContent = input.value;
+          //   document.body.append(item);
+          document.body.append(br, checkbox, addinput, delbtn);
+
+          checkbox.addEventListener("change", (e) => {});
+        });
+      });
+    </script>
+  </head>
+  <body></body>
+</html>

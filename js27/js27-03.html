@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>p351 체크때만 링크활성</title>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        let status = false;
+
+        const checkbox = document.createElement("input");
+        const span = document.createElement("span");
+        const br = document.createElement("br");
+        const a = document.createElement("a");
+
+        checkbox.setAttribute("type", "checkbox");
+        span.textContent = "링크 활성화";
+        a.setAttribute("href", "http://hanbit.co.kr");
+
+        document.body.append(checkbox, span, br, a);
+
+        checkbox.addEventListener("change", (e) => {
+          status = e.currentTarget.checked;
+        });
+
+        a.addEventListener("click", (e) => {
+          if (!status) {
+            e.preventDefault();
+          }
+        });
+      });
+    </script>
+  </head>
+  <body></body>
+</html>
