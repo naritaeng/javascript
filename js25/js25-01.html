@@ -18,7 +18,7 @@
         dot.textContent = "☆";
         dot.style.color = "blue";
         dot.style.position = "absolute";
-        gameinfo.textContent = `점수 : ${ct} / 남은 판수 :`;
+        gameinfo.textContent = `점수 : ${ct}`;
         gameinfo.style.float = "right";
         document.body.append(star, gameinfo, score);
 
@@ -31,8 +31,8 @@
         };
         starprint();
 
-        let dotx = Math.floor(Math.random() * 10);
-        let doty = Math.floor(Math.random() * 10);
+        let dotx = Math.floor(Math.random() * 20);
+        let doty = Math.floor(Math.random() * 20);
 
         const dotprint = () => {
           dot.style.left = `${dotx * block}px`;
@@ -63,8 +63,14 @@
           starprint();
           if (x == dotx && y == doty) {
             gameinfo.textContent = `점수 : ${++ct}`;
-
-            dotprint();
+            if (ct < 5) {
+              dotx = Math.floor(Math.random() * 20);
+              doty = Math.floor(Math.random() * 20);
+              dotprint();
+            } else {
+              alert("주어진 게임 횟수가 소진되었습니다.");
+              return;
+            }
           }
         });
       });
