@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const h1 = document.createElement("h1");
+        const div = document.createElement("div");
+        const indiv = document.createElement("div");
+        const span = document.createElement("span");
+        document.body.append(h1, div);
+        div.append(indiv, span);
+        h1.textContent = "className과 classList 사용해보기";
+
+        /* className에 대입하기*/
+        div.className = "클래스1번"; // className에 대입하기
+        /* classList를 이용한 메소드: 추가, 복수가능*/
+        indiv.classList.add("내부클래스1", "여기추가요"); // 클래스 추가 기능
+        /* classList를 이용한 존재확인: boolean(true or false 값을 받아냄)*/
+        const what = indiv.classList.contains("여기추가요");
+        console.log(what);
+        /* classList를 이용한 메소드: 변경 */
+        span.classList.add("c1", "c2", "c3", "c4");
+        span.classList.replace("c2", "cc22");
+        /* classList를 이용한 메소드: 삭제 */
+        span.classList.remove("c4");
+        /* classList를 이용한 속성: 클래스의 갯수 */
+        const length = span.classList.length;
+        console.log(length);
+        span.textContent = length + "개의 클래스를 가짐";
+      });
+    </script>
+  </head>
+  <body></body>
+</html>

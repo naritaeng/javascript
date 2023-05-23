@@ -7,31 +7,35 @@
     <title>Document</title>
     <script>
       document.addEventListener("DOMContentLoaded", () => {
-        const select = document.createElement("select");
+        const select = document.createElement("select"); // 태그 생성
         const option1 = document.createElement("option");
         const option2 = document.createElement("option");
         const option3 = document.createElement("option");
         const option4 = document.createElement("option");
         const p = document.createElement("p");
 
-        select.setAttributes("multiple", 2);
-        option1.textContent = "떡볶이";
+        select.setAttribute("multiple", ""); // select 태그에 multiple 속성을 부여
+        option1.textContent = "떡볶이"; // 각 옵션태그 내부의 텍스트
         option2.textContent = "순대";
         option3.textContent = "오뎅";
         option4.textContent = "튀김";
 
-        document.body.append(select);
-        select.append(option1, option2, option3, option4);
+        document.body.append(select); // 바디에 셀렉트 태그를 나타냄
+        select.append(option1, option2, option3, option4); // 셀렉트 태그 내부에 옵션 태그를 나타냄
 
         select.addEventListener("change", (event) => {
-          const options = event.currentTarget.options;
-          const list = [];
+          // select의 옵션이 변할 때 이벤트를 줌
+          const options = event.currentTarget.options; // 이벤트 타겟 셀렉트의 옵션을 options라는 변수에 담아줌
+          const list = []; // 빈 배열 선언
           for (const option of options) {
+            // for of문을 사용하여 새로운 변수를 선언해 타겟 options 전체를 훑음
             if (option.selected) {
-              list.push(option.textContent);
+              // 타겟의 옵션중 하나를 선택했을 때의 조건 (선택했을 경우 콘솔에서 true가 표시됨)
+              list.push(option.textContent); // list라는 빈 배열에 선택한 옵션의 텍스트를 담아줌
             }
           }
-          p.textContent = `선택: ${list.join(",")}`;
+          p.textContent = `선택: ${list.join(",")}`; // p태그를 사용해 선택한 옵션들을 나타냄
+          document.body.append(p); // 바디에 p를 나타냄
         });
       });
     </script>
