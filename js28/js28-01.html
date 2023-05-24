@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>p354 할 일 목록 만들기</title>
+    <link rel="stylesheet" href="/javascript/js28/js28-01.css" />
     <script src="https://unpkg.com/typeit@8.7.1/dist/index.umd.js"></script>
     <!-- <style>
       /* 삭제 방법2에 대한 스타일 */
@@ -23,9 +24,18 @@
         const input = document.createElement("input");
         const addbtn = document.createElement("button");
         const allbtn = document.createElement("button");
+        const back = document.createElement("div");
+        const inputline = document.createElement("div");
+        const adddiv = document.createElement("div");
 
-        document.body.append(h1, input, addbtn, allbtn);
+        document.body.append(back, adddiv);
+        back.append(h1, inputline);
+        inputline.append(input, addbtn, allbtn);
+
+        back.className = "back";
+        inputline.className = "inputline";
         h1.textContent = "오늘의 할 일을 추가해보세요!";
+        h1.style.textAlign = "center";
         addbtn.textContent = "추가하기";
         addbtn.style.margin = "5px";
         addbtn.style.width = "80px";
@@ -36,6 +46,13 @@
         input.style.height = "30px";
         input.style.marginRight = "10px";
         allbtn.innerHTML = "전체 삭제";
+        adddiv.style.width = "60%";
+        adddiv.style.height = "300px";
+        adddiv.style.background = "beige";
+        adddiv.style.margin = "0 auto";
+        adddiv.style.borderRadius = "0 0 30px 30px";
+        addbtn.className = "inbtn";
+        allbtn.className = "inbtn";
 
         new TypeIt(h1)
           .pause(2000) //2초 유지
@@ -58,29 +75,45 @@
           if (content) {
             // input에 값이 있을 때만 실행하게 하는 조건문
             const div = document.createElement("div"); // 태그생성
+            const sdiv = document.createElement("div");
             const check = document.createElement("input");
             const span = document.createElement("span");
             const delbtn = document.createElement("button");
 
             delbtn.innerHTML = "삭제하기"; // 버튼에 대한 텍스트
+            delbtn.className = "delbtn";
             check.type = "checkbox"; // input 타입을 체크박스로 바꿈
             check.className = ct++; // 체크박스에 대한 넘버링을 해줌
             span.innerHTML = content; // 출력할 값 content를 span에 넣어줌
+            div.style.width = "80%";
+            div.style.height = "15%";
+            div.style.background = "#c0edf8";
+            div.style.margin = "0 auto";
+            div.style.marginBottom = "5px";
+            div.style.padding = "0 5px 0 5px";
+            div.style.borderRadius = "10px";
+            div.style.boxShadow = "2px 2px 2px 0";
+            div.style.display = "flex";
+            div.style.alignItems = "center";
+            div.style.justifyContent = "space-between";
+            div.className = "indiv";
+
             input.value = ""; // 추가버튼을 누른 후 보여지는 값을 비워줌
             content = ""; // 실제 content 내부에 있는 값을 비워줌
 
-            document.body.append(div); // body에 나타냄
-            div.append(check, span, delbtn); // div 안에 출력할 내용들을 넣어줌 (관리하기 용이)
+            adddiv.append(div); // body에 나타냄
+            div.append(sdiv); // div 안에 출력할 내용들을 넣어줌 (관리하기 용이)
+            sdiv.append(check, span);
 
             /* 체크 방법1 */
             check.addEventListener("change", (e) => {
               // 체크박스가 변할 때에 대한 이벤트
               if (e.currentTarget.checked) {
                 // 이벤트에 대한 타겟이 체크될 때 true 와 false 의 값이 나오기때문에 트루일 때에 대한 조건문
-                div.style.textDecoration = "line-through"; // 조건이 성립될 때 div 내부의 span의 텍스트에 선이 그어짐
+                sdiv.style.textDecoration = "line-through"; // 조건이 성립될 때 div 내부의 span의 텍스트에 선이 그어짐
               } else {
                 // 그 외의 경우 (false) 아무런 스타일도 주지 않는다.(else로 따로 주지 않을 경우 체크가 풀렸을 때 선이 그대로 남아있음)
-                div.style.textDecoration = "none";
+                sdiv.style.textDecoration = "none";
               }
             });
 
@@ -94,16 +127,28 @@
             //   }
             // });
 
-            delbtn.addEventListener("click", (e) => {
-              // 삭제버튼에 대한 이벤트
-              if (check.checked) {
-                // 체크 박스가 트루일 경우에 실행
-                document.body.removeChild(div); //삭제하기 버튼이 속해 있는 디브를 삭제
+            div.addEventListener("mouseover", (e) => {
+              if (e) {
+                div.append(delbtn);
+                delbtn.addEventListener("click", (e) => {
+                  // 삭제버튼에 대한 이벤트
+                  if (check.checked) {
+                    // 체크 박스가 트루일 경우에 실행
+                    // document.body.removeChild(div); //삭제하기 버튼이 속해 있는 디브를 삭제
+                    div.remove();
+                  }
+                });
               }
             });
+            div.addEventListener("mouseout", (e) => {
+              if (e) {
+                div.removeChild(delbtn);
+              }
+            });
+
             allbtn.addEventListener("click", (e) => {
               // 전체 삭제에 대한 이벤트
-              document.body.removeChild(div); // 바디에 속한 div 전체를 삭제함
+              adddiv.removeChild(div); // 바디에 속한 div 전체를 삭제함
             });
           } else {
             alert("내용을 입력해주세요."); // 입력 값에 아무런 내용이 없을 경우 팝업창을 띄움
@@ -113,6 +158,11 @@
       // 체크를 할 때만 삭제버튼이 실행되도록 하여라.
       // 추가하기 버튼 옆에 모두 삭제 버튼을 만들어라.
     </script>
+    <!-- <style>
+      div{
+        color: 
+      }
+    </style> -->
   </head>
   <body></body>
 </html>
