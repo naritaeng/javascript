@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>배열 CRUD</title>
+    <style>
+      button {
+        margin: 5px;
+      }
+    </style>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const p1 = document.createElement("p");
+        const p2 = document.createElement("p");
+        const input = document.createElement("input");
+        const add = document.createElement("button");
+        const pop = document.createElement("button");
+        const del = document.createElement("button");
+        const fix = document.createElement("button");
+        const sort = document.createElement("button");
+
+        document.body.append(input, add, pop, fix, sort, del, p1, p2);
+        add.innerHTML = "추가";
+        pop.innerHTML = "제거";
+        fix.innerHTML = "중복제거";
+        sort.innerHTML = "정렬";
+        del.innerHTML = "요소모두삭제";
+
+        let arr = [];
+        let vin = "";
+        input.addEventListener("keyup", (e) => {
+          vin = e.currentTarget.value;
+        });
+        add.addEventListener("click", (e) => {
+          if (vin) {
+            arr.push(vin);
+            p1.innerHTML = vin + "의 값을 추가 하였습니다.";
+            p2.innerHTML = arr;
+            vin = "";
+            input.value = "";
+          } else {
+            p1.innerHTML = "값을 입력하세요!!";
+          }
+        });
+        pop.addEventListener("click", (e) => {
+          const pp = arr.pop(vin);
+          p1.innerHTML = pp
+            ? `${pp}값을 제거 하였습니다.` //
+            : `배열이 비었습니다.`;
+          p2.innerHTML = arr;
+          vin = "";
+          input.value = "";
+        });
+        fix.addEventListener("click", (e) => {
+          const arrs = new Set(arr);
+          arr = [...arrs]; // Array.from(arrs);
+          console.log(arr);
+          console.log(Array.isArray(arr));
+          p1.innerHTML = `중복된 값을 제거하였습니다.`;
+          p2.innerHTML = arr;
+          vin = "";
+          input.value = "";
+        });
+        sort.addEventListener("click", (e) => {
+          arr.sort((a, b) => a - b);
+          p1.innerHTML = `배열을 정렬하였습니다.`;
+          p2.innerHTML = arr;
+          vin = "";
+          input.value = "";
+        });
+        del.addEventListener("click", (e) => {
+          let arr = []; // arr.length = 0;
+          p1.innerHTML = `배열을 모두 삭제하였습니다.`;
+          p2.innerHTML = `[${arr}]`;
+          vin = "";
+          input.value = "";
+        });
+      });
+    </script>
+  </head>
+  <body></body>
+</html>

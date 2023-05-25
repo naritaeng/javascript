@@ -110,10 +110,17 @@
               // 체크박스가 변할 때에 대한 이벤트
               if (e.currentTarget.checked) {
                 // 이벤트에 대한 타겟이 체크될 때 true 와 false 의 값이 나오기때문에 트루일 때에 대한 조건문
-                sdiv.style.textDecoration = "line-through"; // 조건이 성립될 때 div 내부의 span의 텍스트에 선이 그어짐
+                sdiv.style.textDecoration = "line-through";
+                // 조건이 성립될 때 div 내부의 span의 텍스트에 선이 그어짐
+                div.style.transition = "0.2s linear";
+                div.style.transform = "skew(-25deg)";
+                div.style.background = "lightgray";
               } else {
                 // 그 외의 경우 (false) 아무런 스타일도 주지 않는다.(else로 따로 주지 않을 경우 체크가 풀렸을 때 선이 그대로 남아있음)
                 sdiv.style.textDecoration = "none";
+                div.style.background = "lightblue";
+                div.style.transition = "0.2s linear";
+                div.sytle.transform = "skew(25deg)";
               }
             });
 
@@ -130,15 +137,15 @@
             div.addEventListener("mouseover", (e) => {
               if (e) {
                 div.append(delbtn);
-                delbtn.addEventListener("click", (e) => {
-                  // 삭제버튼에 대한 이벤트
-                  if (check.checked) {
-                    // 체크 박스가 트루일 경우에 실행
-                    // document.body.removeChild(div); //삭제하기 버튼이 속해 있는 디브를 삭제
-                    div.remove();
-                  }
-                });
               }
+              delbtn.addEventListener("click", (e) => {
+                // 삭제버튼에 대한 이벤트
+                if (check.checked) {
+                  // 체크 박스가 트루일 경우에 실행
+                  // document.body.removeChild(div); //삭제하기 버튼이 속해 있는 디브를 삭제
+                  div.remove();
+                }
+              });
             });
             div.addEventListener("mouseout", (e) => {
               if (e) {
