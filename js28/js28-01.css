@@ -1,25 +1,70 @@
+@font-face {
+    font-family: 'GoryeongStrawberry';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2304-01@1.0/GoryeongStrawberry.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
 body{
     width:100%;
     height: 100%;
-    background: #b6f0dc;
+    background: #ceecd5;
+}
+.alldiv{
+    width:80%;
+    min-height: 400px;
+    background:beige;
+    margin: 0 auto;
+    border-radius: 30px;
+    padding-bottom: 10px;
 }
 .back{
-    width: 60%;
-    height: 150px;
+    width: 100%;
+    height: 180px;
     border-radius: 30px 30px 0 0;
     background: #f3c4c4;
     margin: 0 auto;
+    border-bottom: 3px solid black;
+}
+.adddiv{
+    width:100%;
+    background: beige;
+    margin: 0 auto;
+    padding-top: 10px;
+    border-radius: 0 0 30px 30px;
 }
 .inputline{
     width: 80%;
-    margin: 0 auto;
+    height: 40px;
+    margin: 0 auto 20px auto;
+    display: flex;
 }
-.inbtn{
-    background: lightblue;
+.addbtn {
+    width:30%;
+    height:100%;
+    border: 2px solid black;
+    border-radius: 0 10px 10px 0;
+    background: orange;
     transition: 0.1s ease-in;
-    border-radius: 10px;
+    font-family: "GoryeongStrawberry";
+
 }
-.inbtn:hover{
+.allbtn {
+    width: 80px;
+    height: 40px;
+    position: relative;
+    left: 10%;
+    margin-right: 5px;
+    border-radius: 10px;
+    background: lightgreen;
+    transition: 0.1s ease-in;
+    font-family: "GoryeongStrawberry";
+}
+.allbtn:hover{
+    background: rgb(115, 115, 230);
+    transform: scale(1.05);
+}
+.addbtn:hover{
     transform: scale(1.05);
     background: gold;
 }
@@ -41,5 +86,10 @@ body{
     transform: scale(1.03);
     background-color: rgb(72, 72, 235);
     box-shadow: 2px 2px 2px 0;
+}
+.check{
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
 }
 

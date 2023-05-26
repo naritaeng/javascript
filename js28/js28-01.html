@@ -7,8 +7,8 @@
     <title>p354 할 일 목록 만들기</title>
     <link rel="stylesheet" href="/javascript/js28/js28-01.css" />
     <script src="https://unpkg.com/typeit@8.7.1/dist/index.umd.js"></script>
-    <!-- <style>
-      /* 삭제 방법2에 대한 스타일 */
+    <style>
+      /* 삭제 방법2에 대한 스타일
       .check-ok {
         text-decoration: line-through;
         color: gray;
@@ -16,47 +16,49 @@
       .check-no {
         text-decoration: none;
         color: black;
-      }
-    </style> -->
+      } */
+    </style>
     <script>
       document.addEventListener("DOMContentLoaded", () => {
+        const alldiv = document.createElement("div");
         const h1 = document.createElement("h1");
         const input = document.createElement("input");
         const addbtn = document.createElement("button");
         const allbtn = document.createElement("button");
+        const donbtn = document.createElement("button");
         const back = document.createElement("div");
         const inputline = document.createElement("div");
         const adddiv = document.createElement("div");
 
-        document.body.append(back, adddiv);
-        back.append(h1, inputline);
-        inputline.append(input, addbtn, allbtn);
+        document.body.append(alldiv);
+        alldiv.append(back, adddiv);
+        back.append(h1, inputline, allbtn, donbtn);
+        inputline.append(input, addbtn);
 
+        alldiv.className = "alldiv";
         back.className = "back";
         inputline.className = "inputline";
-        h1.textContent = "오늘의 할 일을 추가해보세요!";
+        addbtn.className = "addbtn";
+        allbtn.className = "allbtn";
+        donbtn.className = "allbtn";
+        adddiv.className = "adddiv";
+
+        h1.textContent = "★나의 할 일 목록★";
         h1.style.textAlign = "center";
-        addbtn.textContent = "추가하기";
-        addbtn.style.margin = "5px";
-        addbtn.style.width = "80px";
-        addbtn.style.height = "50px";
-        allbtn.style.width = "80px";
-        allbtn.style.height = "50px";
-        input.setAttribute("id", "todo");
-        input.style.height = "30px";
-        input.style.marginRight = "10px";
+        h1.style.fontFamily = "GoryeongStrawberry";
+
+        addbtn.textContent = "할 일 추가";
+        donbtn.textContent = "완료 삭제";
         allbtn.innerHTML = "전체 삭제";
-        adddiv.style.width = "60%";
-        adddiv.style.height = "300px";
-        adddiv.style.background = "beige";
-        adddiv.style.margin = "0 auto";
-        adddiv.style.borderRadius = "0 0 30px 30px";
-        addbtn.className = "inbtn";
-        allbtn.className = "inbtn";
+        input.setAttribute("id", "todo");
+        input.style.width = "65%";
+        input.style.height = "85%";
+        input.style.borderRadius = "10px 0 0 10px";
+        input.style.fontFamily = "GoryeongStrawberry";
 
         new TypeIt(h1)
           .pause(2000) //2초 유지
-          .delete(16, { delay: 1000 }) // 16글자 삭제 후 1초 딜레이
+          .delete(11, { delay: 1000 }) // 16글자 삭제 후 1초 딜레이
           .type("실천하세요!") // 1초 후 실천하세요! 타이핑
           .go(); // 실행
 
@@ -65,6 +67,8 @@
         input.addEventListener("change", (e) => {
           // 인풋에 내용이 변할때마다 전역으로 선언한 content에 내용을 넣어줌
           content = e.target.value; // content 내부에 이벤트 타켓의 값을 넣어줌(입력값)
+          JSON.stringify(content);
+          localStorage.setItem("arr", content);
           console.log(content);
         });
 
@@ -83,10 +87,13 @@
             delbtn.innerHTML = "삭제하기"; // 버튼에 대한 텍스트
             delbtn.className = "delbtn";
             check.type = "checkbox"; // input 타입을 체크박스로 바꿈
-            check.className = ct++; // 체크박스에 대한 넘버링을 해줌
+            check.className = "check";
+            check.setAttribute("id", ct++); // 체크박스에 대한 넘버링을 해줌
             span.innerHTML = content; // 출력할 값 content를 span에 넣어줌
+            span.style.color = "purple";
+            span.style.fontFamily = "GoryeongStrawberry";
             div.style.width = "80%";
-            div.style.height = "15%";
+            div.style.height = "50px";
             div.style.background = "#c0edf8";
             div.style.margin = "0 auto";
             div.style.marginBottom = "5px";
@@ -97,11 +104,13 @@
             div.style.alignItems = "center";
             div.style.justifyContent = "space-between";
             div.className = "indiv";
+            sdiv.style.display = "flex";
+            sdiv.style.alignItems = "center";
 
             input.value = ""; // 추가버튼을 누른 후 보여지는 값을 비워줌
             content = ""; // 실제 content 내부에 있는 값을 비워줌
 
-            adddiv.append(div); // body에 나타냄
+            adddiv.append(div); // adddiv 안에 나타냄
             div.append(sdiv); // div 안에 출력할 내용들을 넣어줌 (관리하기 용이)
             sdiv.append(check, span);
 
@@ -113,14 +122,14 @@
                 sdiv.style.textDecoration = "line-through";
                 // 조건이 성립될 때 div 내부의 span의 텍스트에 선이 그어짐
                 div.style.transition = "0.2s linear";
-                div.style.transform = "skew(-25deg)";
                 div.style.background = "lightgray";
+                div.append(delbtn);
               } else {
                 // 그 외의 경우 (false) 아무런 스타일도 주지 않는다.(else로 따로 주지 않을 경우 체크가 풀렸을 때 선이 그대로 남아있음)
                 sdiv.style.textDecoration = "none";
                 div.style.background = "lightblue";
                 div.style.transition = "0.2s linear";
-                div.sytle.transform = "skew(25deg)";
+                div.removeChild(delbtn);
               }
             });
 
@@ -134,26 +143,20 @@
             //   }
             // });
 
-            div.addEventListener("mouseover", (e) => {
-              if (e) {
-                div.append(delbtn);
-              }
-              delbtn.addEventListener("click", (e) => {
-                // 삭제버튼에 대한 이벤트
-                if (check.checked) {
-                  // 체크 박스가 트루일 경우에 실행
-                  // document.body.removeChild(div); //삭제하기 버튼이 속해 있는 디브를 삭제
-                  div.remove();
-                }
-              });
-            });
-            div.addEventListener("mouseout", (e) => {
-              if (e) {
-                div.removeChild(delbtn);
+            delbtn.addEventListener("click", () => {
+              // 삭제버튼에 대한 이벤트
+              if (check.checked) {
+                // 체크 박스가 트루일 경우에 실행
+                // document.body.removeChild(div); //삭제하기 버튼이 속해 있는 디브를 삭제
+                div.remove();
               }
             });
-
-            allbtn.addEventListener("click", (e) => {
+            donbtn.addEventListener("click", () => {
+              if (check.checked) {
+                adddiv.removeChild(div);
+              }
+            });
+            allbtn.addEventListener("click", () => {
               // 전체 삭제에 대한 이벤트
               adddiv.removeChild(div); // 바디에 속한 div 전체를 삭제함
             });
