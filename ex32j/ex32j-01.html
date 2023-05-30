@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      function test() {
+        try {
+          console.log("a입니다.");
+          throw "강제예외";
+        } catch (e) {
+          console.log("b입니다. 에러가 났네요.", e);
+          return;
+        } finally {
+          console.log("c입니다."); // finally가 아니면 리턴때문에 캔슬됨.
+        }
+      }
+
+      test();
+    </script>
+  </head>
+  <body></body>
+</html>
