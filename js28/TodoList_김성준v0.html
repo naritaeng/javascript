@@ -5,7 +5,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>p354 할 일 목록 만들기</title>
-    <link rel="stylesheet" href="/javascript/js28/js28-01.css" />
     <script src="https://unpkg.com/typeit@8.7.1/dist/index.umd.js"></script>
     <style>
       /* 삭제 방법2에 대한 스타일
@@ -17,6 +16,100 @@
         text-decoration: none;
         color: black;
       } */
+      @font-face {
+        font-family: "GoryeongStrawberry";
+        src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2304-01@1.0/GoryeongStrawberry.woff2")
+          format("woff2");
+        font-weight: normal;
+        font-style: normal;
+      }
+
+      body {
+        width: 100%;
+        height: 100%;
+        background: #ceecd5;
+      }
+      .alldiv {
+        width: 80%;
+        min-height: 400px;
+        background: beige;
+        margin: 0 auto;
+        border-radius: 30px;
+        padding-bottom: 10px;
+      }
+      .back {
+        width: 100%;
+        height: 180px;
+        border-radius: 30px 30px 0 0;
+        background: #f3c4c4;
+        margin: 0 auto;
+        border-bottom: 3px solid black;
+      }
+      .adddiv {
+        width: 100%;
+        background: beige;
+        margin: 0 auto;
+        padding-top: 10px;
+        border-radius: 0 0 30px 30px;
+      }
+      .inputline {
+        width: 80%;
+        height: 40px;
+        margin: 0 auto 20px auto;
+        display: flex;
+      }
+      .addbtn {
+        width: 30%;
+        height: 100%;
+        border: 2px solid black;
+        border-radius: 0 10px 10px 0;
+        background: orange;
+        transition: 0.1s ease-in;
+        font-family: "GoryeongStrawberry";
+      }
+      .allbtn {
+        width: 80px;
+        height: 40px;
+        position: relative;
+        left: 10%;
+        margin-right: 5px;
+        border-radius: 10px;
+        background: lightgreen;
+        transition: 0.1s ease-in;
+        font-family: "GoryeongStrawberry";
+      }
+      .allbtn:hover {
+        background: rgb(115, 115, 230);
+        transform: scale(1.05);
+      }
+      .addbtn:hover {
+        transform: scale(1.05);
+        background: gold;
+      }
+      .delbtn {
+        background: orange;
+        transition: 0.1s ease-in;
+        border-radius: 5px;
+        height: 40px;
+      }
+      .delbtn:hover {
+        transform: scale(1.03);
+        background: rgb(241, 60, 60);
+        color: yellow;
+      }
+      .indiv {
+        transition: 0.1s ease-in;
+      }
+      .indiv:hover {
+        transform: scale(1.03);
+        background-color: rgb(72, 72, 235);
+        box-shadow: 2px 2px 2px 0;
+      }
+      .check {
+        width: 20px;
+        height: 20px;
+        margin-right: 10px;
+      }
     </style>
     <script>
       document.addEventListener("DOMContentLoaded", () => {
@@ -62,55 +155,54 @@
           .type("실천하세요!") // 1초 후 실천하세요! 타이핑
           .go(); // 실행
 
-        const save = [];
-
         /* 입력한 부분 변수로 받기 */
         let content = ""; // 전역으로 선언하여 밖에서 사용하게 한다
-        input.addEventListener("change", (e) => {
+        input.addEventListener("keyup", (e) => {
           // 인풋에 내용이 변할때마다 전역으로 선언한 content에 내용을 넣어줌
-          content = e.target.value; // content 내부에 이벤트 타켓의 값을 넣어줌(입력값)
+          content = e.currentTarget.value; // content 내부에 이벤트 타켓의 값을 넣어줌(입력값)
         });
 
         /* 동작 1단계 */
         ct = 0; // 각 체크박스에 대한 넘버링을 위한 카운트 변수 선언
-        const div = document.createElement("div"); // 태그생성
-        const sdiv = document.createElement("div");
-        const check = document.createElement("input");
-        const span = document.createElement("span");
-        const delbtn = document.createElement("button");
-
-        delbtn.innerHTML = "삭제하기"; // 버튼에 대한 텍스트
-        delbtn.className = "delbtn";
-        check.type = "checkbox"; // input 타입을 체크박스로 바꿈
-        check.className = "check";
-        span.innerHTML = content; // 출력할 값 content를 span에 넣어줌
-        span.style.color = "purple";
-        span.style.fontFamily = "GoryeongStrawberry";
-        div.setAttribute("id", ct);
-        div.style.width = "80%";
-        div.style.height = "50px";
-        div.style.background = "#c0edf8";
-        div.style.margin = "0 auto";
-        div.style.marginBottom = "5px";
-        div.style.padding = "0 5px 0 5px";
-        div.style.borderRadius = "10px";
-        div.style.boxShadow = "2px 2px 2px 0";
-        div.style.display = "flex";
-        div.style.alignItems = "center";
-        div.style.justifyContent = "space-between";
-        div.className = "indiv";
-        sdiv.style.display = "flex";
-        sdiv.style.alignItems = "center";
+        let save = [];
+        let ck = false;
 
         addbtn.addEventListener("click", () => {
           // 추가하기 버튼에 대한 이벤트
           if (content) {
             // input에 값이 있을 때만 실행하게 하는 조건문
+            const div = document.createElement("div"); // 태그생성
+            const sdiv = document.createElement("div");
+            const check = document.createElement("input");
+            const span = document.createElement("span");
+            const delbtn = document.createElement("button");
 
-            ++ct;
-            save.push({ id: ct, data: input.value, check: check.checked });
-            localStorage.setItem(`ToDo`, JSON.stringify(save));
-            console.log(save);
+            delbtn.innerHTML = "삭제하기"; // 버튼에 대한 텍스트
+            delbtn.className = "delbtn";
+            check.type = "checkbox"; // input 타입을 체크박스로 바꿈
+            check.className = "check";
+            span.innerHTML = content; // 출력할 값 content를 span에 넣어줌
+            span.style.color = "purple";
+            span.style.fontFamily = "GoryeongStrawberry";
+            div.setAttribute("id", ct);
+            div.style.width = "80%";
+            div.style.height = "50px";
+            div.style.background = "#c0edf8";
+            div.style.margin = "0 auto";
+            div.style.marginBottom = "5px";
+            div.style.padding = "0 5px 0 5px";
+            div.style.borderRadius = "10px";
+            div.style.boxShadow = "2px 2px 2px 0";
+            div.style.display = "flex";
+            div.style.alignItems = "center";
+            div.style.justifyContent = "space-between";
+            div.className = "indiv";
+            sdiv.style.display = "flex";
+            sdiv.style.alignItems = "center";
+
+            ct++;
+            save.push({ id: ct, data: content, check: ck });
+            localStorage.setItem(`arr`, JSON.stringify(save));
 
             input.value = ""; // 추가버튼을 누른 후 보여지는 값을 비워줌
             content = ""; // 실제 content 내부에 있는 값을 비워줌
