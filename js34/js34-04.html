@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      class Rectangle {
+        constructor(width, height) {
+          this.width = width;
+          this.height = height;
+        }
+        getPerimeter() {
+          return 2 * (this.width + this.weight);
+        }
+        getArea() {
+          return this.width * this.height;
+        }
+      }
+
+      class Sqaure {
+        constructor(length) {
+          this.length = length;
+        }
+        getPerimeter() {
+          return 4 * this.length;
+        }
+        getArea() {
+          return this.length * this.length;
+        }
+      }
+
+      const sqaure = new Sqaure(10);
+      console.log(`정사각형의 둘레: ${sqaure.getPreimeter()}`);
+      console.log(`정사각형의 둘레: ${sqaure.getArea()}`);
+    </script>
+  </head>
+  <body></body>
+</html>

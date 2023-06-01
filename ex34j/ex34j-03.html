@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>클래스필드</title>
+    <script>
+      /* 방법1 */
+      //   class Btn {
+      //     constructor(value) {
+      //       this.value = value;
+      //     }
+      //     click() {
+      //       console.log(this.value);
+      //     }
+      //   }
+
+      /* 방법2 */
+      class Btn {
+        constructor(value) {
+          this.value = value;
+        }
+        click = () => {
+          console.log(this.value);
+        };
+      }
+      let button = new Btn("안녕하세요");
+      button.click(); // 안녕하세요
+      setTimeout(button.click, 1000);
+      setTimeout(() => button.click(), 1000);
+    </script>
+  </head>
+  <body></body>
+</html>
