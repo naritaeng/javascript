@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      const students = {
+        이름: "구름",
+        국어: 87,
+        영어: 98,
+        수학: 88,
+        과학: 90,
+        getName() {
+          return students.이름;
+        },
+        getLang() {
+          return students.국어;
+        },
+        getEng() {
+          return students.영어;
+        },
+        getMath() {
+          return students.수학;
+        },
+        getSc() {
+          return students.과학;
+        },
+        setLang(value) {
+          if (value >= 60 && value <= 100) {
+          }
+          students.국어 = value;
+        },
+      };
+      console.log(students.getName());
+      console.log(students.getLang());
+      console.log(students.getEng());
+      console.log(students.getMath());
+      console.log(students.getSc());
+
+      students.setLang(24);
+      console.log(students.국어);
+    </script>
+  </head>
+  <body></body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      /* 게터,세터 사용전 */
+      //   const user = { name: "홍길동", age: 33 };
+      //   console.log(user.name);
+      //   console.log(user.age);
+      //   user.name = "박길동";
+
+      /* */
+      const user = {
+        name: "홍길동",
+        age: 33,
+        // 객체의 메소드
+        getName() {
+          return user.name;
+        },
+        setName(value) {
+          if (value.length <= 4) {
+            alert("이름은 2글자에서 4글자까지 쓸 수 있습니다.");
+          }
+          user.name = value;
+        },
+      };
+      console.log(user.getName()); // 홍길동
+      user.setName("팍길동");
+    </script>
+  </head>
+  <body></body>
+</html>

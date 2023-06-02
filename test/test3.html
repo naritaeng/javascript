@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        margin: 10px;
+      }
+      .nav {
+        width: 100%;
+        height: 60px;
+        background: #000;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+      }
+      .nav,
+      .about,
+      .products,
+      .technology,
+      .downloads,
+      .etc {
+        color: #fff;
+        font-weight: 500;
+        font-size: 1.2rem;
+      }
+    </style>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const nav = document.createElement("div");
+        const about = document.createElement("div");
+        const products = document.createElement("div");
+        const technology = document.createElement("div");
+        const downloads = document.createElement("div");
+        const etc = document.createElement("div");
+
+        document.body
+          .appendChild(nav)
+          .append(about, products, technology, downloads, etc);
+
+        about.innerHTML = "About";
+        products.innerHTML = "Products";
+        technology.innerHTML = "Technology";
+        downloads.innerHTML = "Downloads";
+        etc.innerHTML = "ETC";
+
+        nav.className = "nav";
+        about.className = "about";
+        products.className = "products";
+        technology.className = "technology";
+        downloads.className = "downloads";
+        etc.className = "etc";
+
+        const app = document.createElement("div");
+        const ab = document.querySelector("#About");
+        const pd = document.querySelector("#Products");
+        const tc = document.querySelector("#Technology");
+        const dl = document.querySelector("#Downloads");
+        const et = document.querySelector("#Etc");
+        const div = document.querySelector(".content");
+
+        about.addEventListener("mouseover", () => {
+          remove(pd, tc, dl, et);
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <div id="About" class="content">
+      <h1>About</h1>
+      <p>Custom Software Development Company</p>
+    </div>
+
+    <div id="Products" class="content">
+      <h1>Products</h1>
+      <p>
+        Building tailored software to address critical needs of global
+        enterprises.
+      </p>
+    </div>
+
+    <div id="Technology" class="content">
+      <h1>Technology</h1>
+      <p>Machine Learning, Artificial Intelligent, Cloud Platform.</p>
+    </div>
+
+    <div id="Downloads" class="content">
+      <h1>Downloads</h1>
+      <p>You can download a free 10 days trial.</p>
+    </div>
+
+    <div id="Etc" class="content">
+      <h1>Etc</h1>
+      <p>Everything is fine.</p>
+    </div>
+  </body>
+</html>
