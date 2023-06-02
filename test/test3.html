@@ -17,7 +17,7 @@
         justify-content: space-around;
         align-items: center;
       }
-      .nav,
+
       .about,
       .products,
       .technology,
@@ -26,6 +26,9 @@
         color: #fff;
         font-weight: 500;
         font-size: 1.2rem;
+        width: 20%;
+        height: 60px;
+        text-align: center;
       }
     </style>
     <script>
@@ -63,7 +66,11 @@
         const div = document.querySelector(".content");
 
         about.addEventListener("mouseover", () => {
-          remove(pd, tc, dl, et);
+          pd.remove(pd);
+          tc.remove(tc);
+          dl.remove(dl);
+          et.remove(et);
+          about.style.background = "red";
         });
       });
     </script>
