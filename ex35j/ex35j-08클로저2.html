@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>클로저2</title>
+    <script>
+      //   function outerFunc() {
+      //     var x = 10;
+      //     var innerFunc = function () {
+      //       console.log(x);
+      //       x++;
+      //     };
+      //     innerFunc();
+      //   }
+      //   outerFunc();
+      //   outerFunc();
+      //   outerFunc();
+
+      /* 클로져 후 */
+      function outerFunc() {
+        var x = 10;
+        return function () {
+          console.log(x);
+          x++;
+        };
+      }
+      // 함수를 호출하면 내부함수 innerFunc가 반환된다.
+      // 그리고 함수 outerFunc의 실행 컨택스트는 소멸된다.
+      const inner = outerFunc();
+      inner();
+      inner();
+      inner();
+    </script>
+  </head>
+  <body></body>
+</html>

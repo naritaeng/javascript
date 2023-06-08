@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>클로저4</title>
+    <script>
+      function init() {
+        let num = 0;
+        function add() {
+          num++;
+          return num;
+        }
+        function reset() {
+          num = 0;
+          return num;
+        }
+        function show() {
+          console.log(num);
+        }
+        return { add, reset, show };
+      }
+    </script>
+  </head>
+  <body></body>
+</html>
