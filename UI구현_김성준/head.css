@@ -1,0 +1,38 @@
+html,
+body {
+  margin: 0;
+  background: rgb(252, 224, 199);
+}
+.container {
+  display: flex;
+  flex-direction: column;
+}
+.header {
+  background: black;
+}
+.head {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.nav {
+  background: rgb(75, 74, 74);
+  display: flex;
+  margin-bottom: 10px;
+  border-bottom: 1px solid black;
+}
+.nav_btn {
+  border: none;
+  width: 100px;
+  height: 50px;
+  border-right: 1px solid black;
+}
+#head_tit {
+  font-size: 2rem;
+  color: rgb(231, 128, 128);
+}
+a {
+    text-decoration: none;
+    font-size:1rem;
+    display:block;
+  }

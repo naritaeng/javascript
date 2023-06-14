@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <link rel="stylesheet" href="./head.css" />
+  <style>
+    #home_btn {
+      box-shadow: inset 3px 3px 3px #111;
+      background: rgb(207, 233, 226);
+      color: #001aff;
+      font-size: 1rem;
+    }
+    #create_btn {
+      transition: 0.15s ease-in;
+    }
+    #create_btn:hover {
+      background: rgb(184, 196, 172);
+    }
+    #board_btn {
+      transition: 0.15s ease-in;
+    }
+    #board_btn:hover {
+      background: rgb(184, 196, 172);
+    }
+    #head_tit {
+      animation: title 0.8s alternate infinite ease-in;
+    }
+    @keyframes title {
+      from {
+      }
+      to {
+        transform: scale(1.1);
+      }
+    }
+  </style>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const content = document.querySelector(".content");
+      const div1 = document.createElement("div");
+      const div2 = document.createElement("div");
+      const div3 = document.createElement("div");
+      function first() {
+        div1.innerHTML = "<h1>자바스크립트 마무리</h1>";
+        content.appendChild(div1);
+      }
+      function second() {
+        div2.innerHTML = "<h1>고생하셨습니다.</h1>";
+        content.appendChild(div2);
+      }
+      function third() {
+        div3.innerHTML = "<h1>아직 부족해요.</h1>";
+        content.appendChild(div3);
+      }
+
+      setTimeout(() => {
+        first();
+      }, 1000);
+      setTimeout(() => {
+        second();
+      }, 2000);
+      setTimeout(() => {
+        third();
+      }, 3000);
+    });
+  </script>
+  <body>
+    <div class="container">
+      <div class="header">
+        <div class="head"><span id="head_tit">김성준</span></div>
+      </div>
+      <div class="nav">
+        <button class="nav_btn" id="home_btn">Home</button>
+        <button class="nav_btn" id="board_btn">
+          <a href="./noticeboard.html">Board</a>
+        </button>
+        <button class="nav_btn" id="create_btn">
+          <a href="./create.html">Create</a>
+        </button>
+      </div>
+      <div class="content"></div>
+    </div>
+  </body>
+</html>

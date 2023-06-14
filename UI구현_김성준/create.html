@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <link rel="stylesheet" href="./head.css" />
+  <style>
+    #home_btn {
+      transition: 0.15s ease-in;
+    }
+    #home_btn:hover {
+      background: rgb(184, 196, 172);
+    }
+    #board_btn {
+      transition: 0.15s ease-in;
+    }
+    #board_btn:hover {
+      background: rgb(184, 196, 172);
+    }
+    .content {
+      background: rgb(212, 231, 160);
+      border-radius: 30px;
+      box-shadow: 3px 3px 10px rgb(141, 153, 106);
+      margin: 0 30px;
+      padding: 30px;
+      height: 400px;
+    }
+    #create_btn {
+      box-shadow: inset 3px 3px 3px #111;
+      background: rgb(118, 119, 160);
+      color: #fff;
+      font-size: 1rem;
+    }
+    .cont_title {
+      margin-bottom: 10px;
+    }
+    #board_title {
+      width: 50%;
+      position: absolute;
+      left: 120px;
+    }
+    .text {
+      margin-bottom: 20px;
+      height: 70%;
+    }
+    #board_content {
+      width: 50%;
+      height: 35%;
+      position: absolute;
+      left: 120px;
+    }
+    .name {
+      margin-bottom: 10px;
+    }
+    #board_name {
+      width: 50%;
+      position: absolute;
+      left: 120px;
+    }
+    #board_file {
+      width: 50%;
+      position: absolute;
+      left: 120px;
+    }
+    .footer {
+      margin: 20px 30px;
+      height: 50px;
+    }
+    .footer > button {
+      width: 80px;
+      height: 50px;
+      font-size: 1rem;
+      border: none;
+      border-radius: 20px;
+    }
+    .footer > button:nth-child(1) {
+      background: rgb(247, 193, 45);
+      transition: 0.15s ease-in;
+      box-shadow: 3px 3px 3px rgb(138, 137, 133);
+    }
+    .footer > button:nth-child(1):hover {
+      background: rgb(231, 136, 98);
+      box-shadow: inset 2px 2px 5px rgb(85, 84, 82);
+    }
+    .footer > button:nth-child(2) {
+      background: rgb(176, 175, 233);
+      transition: 0.15s ease-in;
+      box-shadow: 3px 3px 3px rgb(138, 137, 133);
+    }
+    .footer > button:nth-child(2):hover {
+      background: rgb(231, 136, 98);
+      box-shadow: inset 2px 2px 5px rgb(85, 84, 82);
+    }
+  </style>
+
+  <body>
+    <form id="postForm">
+      <div class="container">
+        <div class="header">
+          <div class="head"><span id="head_tit">김성준</span></div>
+        </div>
+        <div class="nav">
+          <button class="nav_btn" id="home_btn">
+            <a href="./home.html">Home</a>
+          </button>
+          <button class="nav_btn" id="board_btn">
+            <a href="./noticeboard.html">Board</a>
+          </button>
+          <button class="nav_btn" id="create_btn">Create</button>
+        </div>
+        <div class="content">
+          <div class="cont_title">
+            <span>제목</span>
+            <input
+              id="board_title"
+              type="text"
+              placeholder="제목을 입력하세요."
+              required
+            />
+          </div>
+          <div class="text">
+            <span>내용</span>
+            <textarea
+              id="board_content"
+              placeholder="내용을 입력하세요."
+              required
+            ></textarea>
+          </div>
+          <div class="name">
+            <span>작성자</span>
+            <input
+              id="board_name"
+              type="text"
+              placeholder="이름을 입력하세요."
+              required
+            />
+          </div>
+          <div class="upload">
+            <span>파일</span>
+            <input id="board_file" type="file" />
+          </div>
+        </div>
+        <div class="footer">
+          <button type="submit" class="submit_btn">작성</button>
+          <button class="cancle_btn">
+            <a href="./noticeboard.html"></a>취소
+          </button>
+        </div>
+      </div>
+    </form>
+  </body>
+  <script src="./board_create.js"></script>
+</html>

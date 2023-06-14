@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <link rel="stylesheet" href="./head.css" />
+  <script src="./board_list.js"></script>
+  <style>
+    #board_btn {
+      box-shadow: inset 3px 3px 3px #111;
+      background: rgb(204, 146, 59);
+      color: #fff;
+      font-size: 1rem;
+    }
+    #home_btn {
+      transition: 0.15s ease-in;
+    }
+    #home_btn:hover {
+      background: rgb(184, 196, 172);
+    }
+    #create_btn {
+      transition: 0.15s ease-in;
+    }
+    #create_btn:hover {
+      background: rgb(184, 196, 172);
+    }
+    .content {
+      margin: 0 30px;
+      background: rgb(204, 146, 59);
+      padding: 30px;
+      border-radius: 30px;
+      height: 400px;
+      box-shadow: 3px 3px 10px rgb(114, 82, 33);
+    }
+    .board_box {
+      width: 80%;
+      height: 80%;
+    }
+    .board {
+      width: 100%;
+    }
+    .board_head {
+      background: rgb(112, 123, 170);
+    }
+    .board_num {
+      width: 10%;
+    }
+    .board_tit {
+      width: 35%;
+    }
+    .board_name {
+      width: 10%;
+    }
+    .board_count {
+      width: 10%;
+    }
+    .board_date {
+      width: 30%;
+    }
+    .add_board {
+      background: beige;
+      margin-bottom: 3px;
+      width: 100%;
+      text-align: center;
+    }
+    .footer {
+      margin: 20px 30px;
+      height: 50px;
+    }
+    .footer > button:nth-child(1) {
+      width: 80px;
+      height: 50px;
+      font-size: 1rem;
+      border: none;
+      border-radius: 20px;
+      background: rgb(247, 193, 45);
+      transition: 0.15s ease-in;
+      box-shadow: 3px 3px 3px rgb(138, 137, 133);
+    }
+    .footer > button:nth-child(1):hover {
+      background: rgb(231, 136, 98);
+      box-shadow: inset 2px 2px 5px rgb(85, 84, 82);
+    }
+  </style>
+  <script></script>
+  <body>
+    <div class="container">
+      <div class="header">
+        <div class="head"><span id="head_tit">김성준</span></div>
+      </div>
+      <div class="nav">
+        <button class="nav_btn" id="home_btn">
+          <a href="./home.html">Home</a>
+        </button>
+        <button class="nav_btn" id="board_btn">Board</button>
+        <button class="nav_btn" id="create_btn">
+          <a href="./create.html">Create</a>
+        </button>
+      </div>
+      <div class="content">
+        <div id="board_box">
+          <table class="board">
+            <tr class="board_head">
+              <th class="board_num">번호</th>
+              <th class="board_tit">제목</th>
+              <th class="board_name">작성자</th>
+              <th class="board_count">조회수</th>
+              <th class="board_date">작성일자</th>
+            </tr>
+          </table>
+        </div>
+      </div>
+      <div class="footer">
+        <button><a href="./create.html">작성</a></button>
+      </div>
+    </div>
+    <script src="./board_list.js"></script>
+  </body>
+</html>
